@@ -1,0 +1,120 @@
+$path-font: "../../content/fonts/";
+$path-img: "../../content/img/";
+
+$color-body: #fff;
+$color-surface-background: #dadaff;
+
+$color-third: #a1a1a1;
+$color-second: #707070;
+$color-first: #3a3a3a;
+
+//$color-primary:#4346CA;
+$color-primary: #080b3a;
+$color-primary-light: #4346ca;
+$color-accent: #9601b0;
+$color-danger: #e83f3f;
+$color-success: #17a855;
+//$color-warning:#eb9019;
+$color-warning: #d77d06;
+$color-link: #3a98d6;
+$color-special: #1fb799;
+$purple: #8974fb;
+$light-purple: #c784dd;
+
+$shadow-main: 0 4px 10px -5px rgba(0, 0, 0, 0.1);
+$shadow-main-hover: 0 4px 10px -3px rgba(0, 0, 0, 0.2);
+
+$radius-lg: 16px;
+$radius-md: 8px;
+$radius-sm: 4px;
+
+$size-xl: 32px;
+$size-lg: 16px;
+$size-md: 8px;
+$size-sm: 4px;
+
+$space-section: 36px;
+$space-section-md: 48px;
+$space-section-lg: 64px;
+
+$space-main: 12px;
+$form-height: 35px;
+
+$time: 0.2s;
+
+$font-main: iransans, tahoma;
+
+@mixin item-shadow($color) {
+  box-shadow: 0 3px 6px -2px $color;
+}
+@mixin item-shadow-hover($color) {
+  box-shadow: 0 3px 8px -3px $color;
+}
+@mixin form-shadow($color) {
+  box-shadow: 0 2px 10px 5px $color;
+}
+@mixin form-shadow-hover($color) {
+  box-shadow: 0 4px 14px -2px $color;
+}
+@mixin btn-shadow($color) {
+  box-shadow: 0 3px 10px -4px $color;
+}
+@mixin btn-shadow-hover($color) {
+  box-shadow: 0 4px 15px -6px $color;
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+$break-xsmall: 384px;
+$break-small: 576px;
+$break-medium: 768px;
+$break-large: 992px;
+$break-xlarge: 1280px;
+$break-xxlarge: 1920px;
+$break-xxxlarge: 3000px;
+
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $break-xsmall) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media only screen and (max-width: $break-small) {
+      @content;
+    }
+  } @else if $media == md {
+    @media only screen and (max-width: $break-medium) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media only screen and (max-width: $break-large) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media only screen and (max-width: $break-xlarge) {
+      @content;
+    }
+  } @else if $media == xxl {
+    @media only screen and (min-width: $break-xlarge) {
+      @content;
+    }
+  } @else if $media == xxxl {
+    @media only screen and (min-width: $break-xxlarge) {
+      @content;
+    }
+  }
+}
+
+%more-wrapper {
+  margin-top: $size-lg;
+  border-radius: $radius-lg;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  @include form-shadow(rgba(0, 0, 0, 0.2));
+}

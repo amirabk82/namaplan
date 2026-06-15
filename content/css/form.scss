@@ -1,0 +1,1029 @@
+@import "variable";
+
+.form-header {
+  text-align: center;
+  padding: 20px 0 40px;
+
+  h5,
+  h1 {
+    font-size: 2.6rem;
+    color: $color-primary;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0 8px;
+    border-bottom: 4px solid lighten($color-first, 30%);
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.6rem;
+    color: $color-second;
+  }
+}
+
+.input-text,
+.input-check,
+.input-tick,
+.input-switch,
+.input-file,
+.input-drop {
+  position: relative;
+  margin: 0 auto 20px;
+
+  & > p {
+    width: 100%;
+    padding: 5px;
+    display: block;
+    background: none;
+    font-size: 1.4rem;
+    color: $color-third;
+    transition: $time;
+  }
+  &:hover > p {
+    color: $color-second;
+  }
+}
+/* Input Text */
+
+.input-text {
+  padding-top: 1px;
+
+  > label {
+    font-size: 1.6rem;
+    color: $color-first;
+    margin-bottom: 4px;
+    transition: $time;
+    display: inline-block;
+    span {
+      color: $color-danger;
+      font-size: 1.6rem;
+    }
+  }
+
+  &.is-focus > label {
+    color: $color-primary;
+  }
+  &.is-full > label {
+    color: $color-third;
+  }
+  & > input[type="text"],
+  & > input[type="number"],
+  & > input[type="email"],
+  & > input[type="datetime"],
+  & > input[type="password"] {
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid $color-second;
+    display: block;
+    background: #fff;
+    font-size: 1.5rem;
+    color: $color-first;
+    transition: $time;
+    border-radius: $radius-sm;
+    position: relative;
+    font-family: iransans, tahoma;
+  }
+
+  &.is-focus > input[type="text"],
+  &.is-focus > input[type="email"],
+  &.is-focus > input[type="datetime"],
+  &.is-focus > input[type="password"] {
+    box-shadow: -2px 4px 8px -3px rgba(230, 99, 234, 0.281);
+    border: 1px solid $color-primary;
+    background: rgb(255, 248, 254);
+  }
+
+  &.is-full > input[type="text"],
+  &.is-full > input[type="email"],
+  &.is-full > input[type="datetime"],
+  &.is-full > input[type="password"] {
+    border: 1px solid #eaeaea;
+    background: #fafafa;
+  }
+
+  &.input-text-icon {
+    border: 1px solid $color-second;
+    background: #fff;
+    cursor: pointer;
+    transition: $time;
+    border-radius: $radius-md;
+    overflow: hidden;
+
+    .input-icon {
+      float: left;
+      width: 35px;
+      height: 35px;
+      margin: 5px;
+      img {
+        width: 30px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  &.input-text-icon.is-focus > input[type="text"],
+  &.input-text-icon.is-focus > input[type="email"],
+  &.input-text-icon.is-focus > input[type="datetime"],
+  &.input-text-icon.is-focus > input[type="password"] {
+    box-shadow: none;
+    border: none;
+  }
+
+  &.input-text-icon > input[type="text"],
+  &.input-text-icon > input[type="email"],
+  &.input-text-icon > input[type="datetime"],
+  &.input-text-icon > input[type="password"] {
+    width: calc(100% - 40px);
+    height: 40px;
+    padding: 5px 10px;
+    border: none;
+    display: inline-block;
+    transition: $time;
+    font-size: 1.5rem;
+    color: $color-second;
+    position: relative;
+  }
+
+  &.input-text-icon.is-focus {
+    box-shadow: -2px 4px 8px -3px rgba(230, 99, 234, 0.281);
+    border: 1px solid $color-primary;
+    background: rgb(255, 248, 254);
+  }
+
+  &.input-text-icon.is-full {
+    border: 1px solid #eaeaea;
+    background: #fafafa;
+  }
+
+  /* Textarea */
+
+  & > textarea {
+    width: 100%;
+    min-height: 140px;
+    resize: none;
+    padding: 5px 10px;
+    border: 1px solid $color-second;
+    display: block;
+    background: #fff;
+    font-size: 1.5rem;
+    color: $color-first;
+    transition: $time;
+    border-radius: $radius-sm;
+    font-family: $font-main;
+  }
+  &.is-focus > textarea {
+    box-shadow: -2px 4px 8px -3px rgba(230, 99, 234, 0.281);
+    border: 1px solid $color-primary;
+    background: rgb(255, 248, 254);
+  }
+  &.is-full > textarea {
+    border: 2px solid #eaeaea;
+    background: #fafafa;
+  }
+
+  /* Input Number */
+
+  & > input[type="number"] {
+    width: 100%;
+    height: 45px;
+    padding: 5px 10px;
+    border: 1px solid $color-second;
+    display: block;
+    background: #fff;
+    font-size: 1.5rem;
+    color: $color-first;
+    border-radius: $radius-sm;
+    transition: $time;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none !important ;
+  }
+
+  & >  /* مخفی کردن فلش‌ها در حالت هاور و فعال */
+  input[type="number"]:hover::-webkit-inner-spin-button,
+  input[type="number"]:hover::-webkit-outer-spin-button,
+  input[type="number"]:focus::-webkit-inner-spin-button,
+  input[type="number"]:focus::-webkit-outer-spin-button {
+    display: none; /* جلوگیری از نمایش */
+  }
+
+  &.is-focus > input[type="number"] {
+    box-shadow: -2px 4px 8px -3px rgba(230, 99, 234, 0.281);
+    border: 1px solid $color-primary;
+    background: rgb(255, 248, 254);
+  }
+
+  &.is-full > input[type="number"] {
+    border: 1px solid #eaeaea;
+    background: #fafafa;
+  }
+}
+
+.input-number {
+  .quantity-nav {
+    position: absolute;
+    display: none;
+    height: 40px;
+    width: 35px;
+    left: 2px;
+    bottom: 2px;
+    background-color: transparent;
+  }
+
+  .quantity-button {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    &.quantity-up {
+      position: absolute;
+      height: 50%;
+      top: -1px;
+      background-image: url(#{$path-img}icon/up.png);
+      background-position: center bottom 4px;
+      background-repeat: no-repeat;
+      transition: $time;
+      background-size: 15px;
+    }
+    &.quantity-down {
+      position: absolute;
+      bottom: 1px;
+      height: 50%;
+      background-image: url(#{$path-img}icon/down.png);
+      background-position: center top 4px;
+      background-repeat: no-repeat;
+      background-size: 15px;
+      transition: $time;
+    }
+  }
+
+  .custom_select_option {
+    // border: none;
+    border: 1px solid #777;
+    outline: none;
+  }
+}
+
+/* Dropdown */
+
+.input-drop {
+  label {
+    font-size: 1.6rem;
+    color: $color-first;
+    height: 25px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  select {
+    width: 100%;
+    height: 45px;
+    padding: 0px 10px;
+    font-size: 1.6rem;
+    color: $color-first;
+    border: 1px solid $color-second;
+    font-family: $font-main;
+    display: block;
+    border-radius: $radius-sm;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(#{$path-img}icon/drop-down.png);
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center left 10px;
+    cursor: pointer;
+    padding-left: 26px;
+    option {
+      height: 30px;
+      padding: 3px 10px 1px;
+      color: $color-second;
+      cursor: pointer;
+      transition: 0.1s;
+      font-family: $font-main;
+
+      &:hover {
+        background: $color-primary;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* Input Radio & Checkbox */
+.input-check {
+  h5 {
+    font-size: 1.6rem;
+    color: $color-first;
+    height: 25px;
+    line-height: 25px;
+    transition: $time;
+    z-index: 1;
+  }
+
+  &.inline-block h5 {
+    display: inline-block;
+  }
+
+  > label {
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-right: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 7px;
+    padding-top: 10px;
+
+    img {
+      display: block;
+      width: 40px;
+      margin: 10px auto;
+      border-radius: $radius-lg;
+    }
+  }
+
+  &.input-vertical > label {
+    display: block;
+    margin: 0 15px 7px 0;
+  }
+
+  > {
+    label {
+      > {
+        span {
+          transition: $time;
+          border-radius: $radius-lg;
+        }
+
+        input {
+          display: none;
+
+          + span {
+            color: $color-first;
+            border-radius: $radius-lg;
+          }
+        }
+      }
+
+      &:hover > input + span {
+        color: $color-first;
+      }
+
+      > input {
+        &:checked + span {
+          color: $color-success;
+          border-radius: $radius-lg;
+          font-weight: bold;
+        }
+        &[type="checkbox"] {
+          + span:before {
+            content: "";
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background-color: #f8f8f8;
+            border: 2px solid #dadada;
+            border-radius: $radius-lg;
+            line-height: 20px;
+            margin-left: 6px;
+            transition: $time;
+            vertical-align: middle;
+            text-align: center;
+            background-size: 0px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(#{$path-img}icon/tick.png);
+          }
+
+          &:checked + span:before {
+            content: "";
+            background-size: 13px;
+            background-color: lighten(#45bf55, 40%);
+            border: 2px solid #45bf55;
+          }
+        }
+
+        &[type="radio"] {
+          + span:before {
+            content: "";
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            color: $color-success;
+            background-color: #f8f8f8;
+            border: 2px solid #dadada;
+            border-radius: 100%;
+            margin-left: 6px;
+            transition: 0.2s;
+            vertical-align: middle;
+            text-align: center;
+            background-size: 0px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(#{$path-img}icon/radio.png);
+          }
+
+          &:checked + span:before {
+            content: "";
+            background-size: 10px;
+            background-color: lighten(#45bf55, 40%);
+            border: 2px solid #45bf55;
+          }
+        }
+      }
+    }
+
+    p {
+      width: 100%;
+      padding: 5px;
+      display: block;
+      background: none;
+      font-size: 1.2rem;
+      position: relative;
+      color: #bbb;
+      transition: $time;
+      margin: 5px 0;
+    }
+  }
+
+  &:hover > p {
+    color: #777;
+  }
+}
+
+/* Input Switch */
+
+.input-tick > label {
+  font-size: 14px;
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline-block;
+  padding-top: 8px;
+
+  > {
+    h5 {
+      font-size: 1.6rem;
+      color: $color-first;
+      height: 20px;
+      line-height: 22px;
+      transition: 0.4s;
+      z-index: 1;
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: top;
+      margin-left: 8px;
+    }
+
+    span {
+      transition: $time;
+      width: 48px;
+      height: 25px;
+      border-radius: $radius-md;
+      display: inline-block;
+      background: #b6e2e3;
+      position: relative;
+    }
+
+    input {
+      display: none;
+
+      &:checked + span {
+        background: #45bf55;
+      }
+
+      &[type="checkbox"] {
+        + span:before {
+          content: "";
+          position: absolute;
+          left: 3px;
+          top: 3px;
+          width: 19px;
+          height: 19px;
+          background: #fff;
+          transition: $time;
+          border-radius: $radius-md;
+          box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        &:checked + span:before {
+          left: 26px;
+        }
+      }
+    }
+  }
+}
+
+/* Button */
+
+%btn {
+  border: none;
+  display: inline-block;
+  height: 40px;
+  line-height: 38px;
+  padding: 0 20px;
+  border-radius: 40px;
+  margin: 5px;
+  font-weight: bold;
+  font-family: $font-main;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: $time;
+  vertical-align: middle;
+  outline: none;
+
+  &.align-input {
+    margin-top: 34px;
+    @include respond-to(md) {
+      margin-top: 0;
+    }
+  }
+
+  &.btn-lg {
+    height: 60px;
+    padding: 0 60px;
+    border-radius: 60px;
+    font-size: 1.8rem;
+  }
+  &.btn-sm {
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 24px;
+    font-size: 1rem;
+  }
+  &.btn-rd {
+    border-radius: $radius-md;
+  }
+  &.px-lg {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+.btn {
+  @extend %btn;
+
+  img,
+  svg {
+    height: 22px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: -5px;
+  }
+  &.btn-icon {
+    //padding: 0 10px;
+
+    img,
+    svg {
+      height: 20px;
+      width: 20px;
+      vertical-align: middle;
+      margin-left: 6px;
+      margin-right: 0px;
+      margin-top: 2px;
+    }
+    &.btn-icon-only {
+      img,
+      svg {
+        margin-left: 0px;
+      }
+    }
+  }
+  &.btn-icon-left {
+    img,
+    svg {
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 6px;
+      margin-left: 0px;
+      margin-top: 2px;
+    }
+  }
+  &:active {
+    transform: scale(0.98);
+    transition: 0.1s;
+  }
+  &:focus {
+    outline: 0 !important;
+    background: $color-second;
+    color: rgb(245, 245, 245);
+    outline-offset: -2px;
+    svg {
+      color: rgb(245, 245, 245);
+    }
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  .include-img {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin: 3px;
+    // background: rgba(0, 0, 0, 0.15);
+    border-radius: 100%;
+    // margin-left: -16px;
+    // margin-right: 8px;
+    img {
+      margin: 0;
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
+.call_info {
+  padding: 0px 0px;
+  z-index: 300;
+  display: flex;
+  direction: ltr;
+
+  .call_info__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: -9px;
+    left: 30px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+    color: #333;
+    font-weight: bold;
+    transition: 0.2s;
+    padding: 10px;
+
+    .call_info__items {
+      // border: 1px solid brown;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 10px 0px;
+      width: 90%;
+      transition: 0.2s;
+
+      .call_info__items_icon {
+        // border: 1px solid brown;
+        border-left: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+        height: 65px;
+        // box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
+
+        .call_info__items_icon_pic {
+          height: 60%;
+        }
+      }
+      .call_info__items_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        // border: 1px solid brown;
+
+        .call_info__items_contactHolder {
+          // border: 1px solid brown;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1px 10px;
+          gap: 20px;
+          width: 300px;
+
+          .call_info__items_name {
+            // border: 1px solid brown;
+            display: flex;
+            color: #777;
+          }
+
+          .call_info__items_numberBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            width: 140px;
+            height: 30px !important;
+            font-weight: 500;
+            letter-spacing: 1px;
+            // border: 1px solid brown;
+            margin: 0 !important;
+          }
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &:hover {
+    .call_info__content {
+      width: 360px;
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.btn-success {
+  @extend %btn;
+  background: $color-success;
+
+  @include btn-shadow(rgba(6, 91, 41, 0.38));
+
+  &:hover {
+    background: lighten($color-success, 10%);
+
+    @include btn-shadow-hover(rgba(6, 91, 41, 0.58));
+  }
+}
+.btn-success-outline {
+  @extend %btn;
+  background: #fff;
+  border: 1px solid $color-success;
+  color: $color-success;
+  letter-spacing: 0px;
+  text-transform: unset;
+  @include btn-shadow(rgba(59, 218, 125, 0.274));
+
+  &:hover {
+    background: lighten($color-success, 50%);
+    color: $color-success;
+    @include btn-shadow-hover(rgba(27, 177, 90, 0.397));
+  }
+}
+
+.btn-primary {
+  @extend %btn;
+  background: $color-primary;
+  @include btn-shadow(rgba(6, 46, 91, 0.38));
+
+  &:hover {
+    background: lighten($color-primary, 10%);
+    @include btn-shadow-hover(rgba(6, 46, 91, 0.58));
+  }
+}
+.btn-primary-outline {
+  @extend %btn;
+  background: #fff;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  letter-spacing: 0px;
+  text-transform: unset;
+  @include btn-shadow(rgba(6, 40, 91, 0.38));
+
+  &:hover {
+    background: lighten($color-primary-light, 40%);
+
+    @include btn-shadow-hover(rgba(6, 43, 91, 0.58));
+  }
+}
+
+.btn-warning {
+  @extend %btn;
+  background: $color-warning;
+  @include btn-shadow(rgba(141, 108, 0, 0.38));
+
+  &:hover {
+    background: lighten($color-warning, 10%);
+    @include btn-shadow-hover(rgba(141, 108, 0, 0.58));
+  }
+}
+.btn-warning-outline {
+  @extend %btn;
+  background: #fff;
+  border: 1px solid $color-warning;
+  color: $color-warning;
+  letter-spacing: 0px;
+  text-transform: unset;
+  @include btn-shadow(rgba(141, 108, 0, 0.38));
+
+  &:hover {
+    background: lighten($color-warning, 40%);
+
+    @include btn-shadow-hover(rgba(141, 108, 0, 0.38));
+  }
+}
+
+.btn-danger {
+  @extend %btn;
+  background: $color-danger;
+  @include btn-shadow(rgba(141, 0, 0, 0.38));
+
+  &:hover {
+    background: lighten($color-danger, 10%);
+    @include btn-shadow-hover(rgba(141, 0, 0, 0.58));
+  }
+}
+.btn-danger-outline {
+  @extend %btn;
+  background: #fff;
+  border: 1px solid $color-danger;
+  color: $color-danger;
+  letter-spacing: 0px;
+  text-transform: unset;
+  @include btn-shadow(rgba(141, 0, 0, 0.38));
+
+  &:hover {
+    background: lighten($color-danger, 40%);
+
+    @include btn-shadow-hover(rgba(141, 0, 0, 0.38));
+  }
+}
+
+.btn-default {
+  @extend %btn;
+  background: $color-first;
+  @include btn-shadow(rgba(0, 0, 0, 0.25));
+
+  &:hover {
+    background: lighten($color-first, 10%);
+    @include btn-shadow-hover(rgba(0, 0, 0, 0.4));
+  }
+}
+.btn-default-outline {
+  @extend %btn;
+  background: #fff;
+  border: 1px solid $color-first;
+  color: $color-first;
+  letter-spacing: 0px;
+  text-transform: unset;
+  @include btn-shadow(rgba(6, 91, 41, 0.38));
+
+  &:hover {
+    background: lighten($color-first, 40%);
+
+    @include btn-shadow-hover(rgba(6, 91, 41, 0.58));
+  }
+}
+.btn-link-fill {
+  @extend %btn;
+  background: $color-link;
+  @include btn-shadow(rgba($color-link, 0.38));
+
+  &:hover {
+    background: lighten($color-link, 10%);
+    @include btn-shadow-hover(rgba($color-link, 0.38));
+  }
+}
+.btn-light {
+  @extend %btn;
+  background: #fff;
+  color: $color-primary;
+  &:hover {
+    background: lighten($color-primary-light, 40%);
+    @include btn-shadow-hover(rgba(0, 0, 0, 0.4));
+  }
+}
+.ex-search {
+  @extend %btn;
+  background: lighten($color-warning, 50%);
+  color: $color-warning;
+  fill: $color-warning;
+  font-size: 1.8rem;
+  margin: 0;
+  &:hover {
+    background: lighten($color-warning, 20%);
+    color: #fff;
+    fill: #fff;
+  }
+}
+.btn-link {
+  @extend %btn;
+  color: $color-primary;
+
+  svg {
+    color: $color-primary;
+    transition: $time;
+  }
+
+  &:hover {
+    background: lighten($color-primary-light, 40%);
+    @include btn-shadow-hover(rgba(35, 116, 182, 0.3));
+  }
+  &:focus {
+    color: $color-third;
+    svg {
+      color: $color-third;
+    }
+  }
+}
+
+.link {
+  display: inline-block;
+  color: $color-link;
+  //cursor: pointer;
+  outline: none;
+
+  //&:hover {
+  //color: lighten($color-primary-light, 10%);
+  //text-decoration: underline;
+  //}
+  &.link-dark {
+    color: $color-second;
+  }
+  &.link-light {
+    //color: lighten($color-primary , 40%);
+    color: #fff;
+  }
+  img {
+    width: 18px;
+    margin-right: 2px;
+    vertical-align: middle;
+  }
+  &.link-sm {
+    font-size: 1.4rem;
+    img {
+      width: 14px;
+      margin: 0px;
+    }
+  }
+}
+
+%link-icon {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: $radius-md;
+  vertical-align: middle;
+  img {
+    width: 24px;
+    margin: 2px;
+  }
+}
+.link-icon {
+  @extend %link-icon;
+  cursor: pointer;
+
+  &.link-sm {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 4px;
+    img {
+      width: 16px;
+      margin: 0px;
+    }
+  }
+}
+
+.link-remove {
+  @extend %link-icon;
+
+  background: lighten($color-danger, 40%);
+}
+.link-edit {
+  @extend %link-icon;
+
+  background: lighten($color-warning, 40%);
+}
+
+.form-error {
+  position: absolute;
+  left: 10px;
+  top: 90%;
+  border-radius: 5px;
+  padding: 8px 12px;
+  background: lighten($color: $color-danger, $amount: 45%);
+  color: $color-danger;
+  font-size: 1.6rem;
+  border: 2px solid $color-danger;
+  z-index: 3;
+  @include btn-shadow(rgba(194, 34, 34, 0.603));
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid $color-danger;
+  }
+}

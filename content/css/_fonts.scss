@@ -1,0 +1,24 @@
+@font-face {
+  font-family: iransans;
+  src: url("#{$path-font}IRANSansWeb.eot");
+  src: url("#{$path-font}IRANSansWeb.ttf") format("truetype"),
+    url("#{$path-font}IRANSansWeb.woff2") format("woff2"),
+    url("#{$path-font}IRANSansWeb.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: iransans;
+  src: url("#{$path-font}IRANSansWeb_Bold.eot");
+  src: url("#{$path-font}IRANSansWeb_Bold.ttf") format("truetype"),
+    url("#{$path-font}IRANSansWeb_Bold.woff") format("woff"),
+    url("#{$path-font}Estedad-Bold.woff2") format("woff2"),
+    url("#{$path-font}IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: iransans;
+}

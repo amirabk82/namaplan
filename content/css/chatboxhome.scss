@@ -1,0 +1,450 @@
+@import "variable";
+@import "reset";
+@import "fonts";
+@import "grid";
+
+// متغیرها
+$primary-color: #002442;
+$secondary-color: #0061b1;
+$background-color: #ffffff;
+$box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+$hover-color: #daf4ff;
+$disabled-color: #ccc;
+$placeholder-color: #f1f1f1;
+
+/*--------------------
+Mixins
+--------------------*/
+
+@mixin center {
+  position: relative;
+  /*  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+@mixin ball {
+  @include center;
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  /*  background: rgba(255, 255, 255, .5);*/
+  background: #888;
+  z-index: 2;
+  margin-top: 4px;
+  animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+}
+
+.fabhome-holder-ai {
+  // overflow: hidden;
+  // border: 1px solid red;
+  width: 0%;
+  height: 100vh;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 8;
+  //background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+  //backdrop-filter: blur(10px); /* Apply the blur effect */
+  // @include respond-to(xxl) {
+  //   display: flex;
+  // }
+}
+
+#fabhome-toggle-ai {
+  -webkit-appearance: none;
+}
+
+.fabhome-button-ai {
+  position: absolute;
+  z-index: 9;
+  width: 60px;
+  height: 60px;
+  background: #0061f3 url(../img/icon/ai-chat.svg) no-repeat center center;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 95px;
+  right: 15px;
+
+  &:before {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(90deg);
+    transition: all 0.4s ease;
+  }
+  &:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.4s ease;
+  }
+}
+
+.fabhome-nav-ai {
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  // background: transparent;
+  height: 550px;
+  max-height: 650px;
+  width: 350px;
+  border-radius: 12px;
+  transform: translateY(0%);
+  // box-shadow: 2px 3px 10px 0 rgba(81, 81, 81, 0.1) !important;
+  // border: 1px solid red;
+  // padding: 10px;
+  margin-right: 20px;
+  margin-bottom: -20px;
+  position: absolute;
+  bottom: 150px;
+  right: 5px;
+
+  // استایل چت باکس
+  .chatboxhome {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 90%;
+    background-color: $background-color;
+    border-radius: 16px;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+
+    // هدر چت باکس
+    .chatHeaderHome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid $primary-color;
+      box-shadow: 0px -2px 3px 1px #ccc;
+      color: $primary-color;
+      padding: 8px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 16px 16px 50% 50%;
+
+      .ai-header-pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        // margin: 8px;
+        margin-top: -56px;
+        // margin-bottom: 10px;
+        overflow: hidden;
+        border: 5px solid #eee;
+        box-shadow: 0px -4px 3px 1px #ccc;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .ai-header-title {
+        display: flex;
+        margin: 5px 0;
+      }
+    }
+
+    // سوالات پیش‌فرض
+    .default-question-holder {
+      width: 100%;
+      position: absolute;
+      bottom: 72px;
+      direction: rtl;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .default-question {
+        box-shadow: 2px 2px 3px 1px #eee;
+        background-color: #e9f8fe;
+        padding: 6px 16px;
+        padding-bottom: 7px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        margin: 0px auto;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          box-shadow: 2px 2px 5px 1px #bebebe;
+          background-color: $hover-color;
+        }
+
+        // &.disabled-q {
+        //   color: $disabled-color;
+        //   pointer-events: none;
+        //   display: none !important;
+        // }
+      }
+    }
+    .default-question-holder.calc-price-ai {
+      // width: 98%;
+      // border: 1px solid red;
+      box-sizing: border-box;
+      flex-direction: row;
+      overflow: auto;
+      justify-content: flex-start;
+      padding: 4px 12px;
+      font-size: 13px;
+      // box-shadow: 0px 2px 5px 1px #bebebe inset;
+
+      .default-question {
+        // min-width: 200px;
+        white-space: nowrap;
+      }
+    }
+
+    // قسمت پیام‌ها
+    .messages {
+      direction: ltr;
+      flex-grow: 1;
+      padding: 16px 4px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-bottom: 72px;
+
+      .message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        border-radius: 10px;
+        max-width: 90%;
+        word-wrap: break-word;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .user-message {
+        color: white;
+        align-self: flex-end;
+        flex-direction: row-reverse;
+        .user-profile {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-self: flex-start;
+          flex-direction: row;
+          /* border: 1px solid red; */
+          border-radius: 50%;
+          flex-shrink: 0;
+          /* جلوگیری از تغییر اندازه */
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            /* margin-top: 5px; */
+          }
+        }
+        p {
+          background-color: #002442;
+          color: #f1f1f1;
+          margin: 0;
+          font-size: 14px;
+        }
+      }
+
+      /* کادر پیام */
+      .message-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        direction: rtl;
+        flex-direction: column;
+        padding: 8px 16px;
+        padding-top: 5px;
+        border-radius: 25px;
+        max-width: 85%;
+        background-color: #f1f1f1;
+        color: #000;
+        line-height: 1.5;
+        box-shadow: 1px 1px 1px 1px #e2e2e2;
+
+        /* word-wrap: break-word;*/
+      }
+
+      .ai-message {
+        align-self: flex-start;
+        color: $primary-color;
+        .ai-profile {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-self: flex-start;
+          flex-direction: row;
+          /* border: 1px solid blue; */
+          border-radius: 50%;
+          flex-shrink: 0;
+          box-shadow: 1px 1px 5px 1px #dcdcdc;
+
+          /* جلوگیری از تغییر اندازه */
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            /* margin-top: 5px; */
+          }
+        }
+
+        p {
+          font-size: 14px;
+
+          .ai-link {
+            color: $secondary-color;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+              color: darken($secondary-color, 20%);
+            }
+          }
+        }
+      }
+    }
+
+    // ورودی و دکمه ارسال
+    .inputArea {
+      direction: ltr;
+      display: flex;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #ddd;
+      border-radius: 0 0 16px 16px;
+
+      .sentence {
+        flex-grow: 1;
+        padding: 10px 16px;
+        border-radius: 0 25px 25px 0;
+        border: 1px solid #ddd;
+        border-left: 1px solid transparent;
+        font-size: 15px;
+        outline: none;
+        direction: rtl;
+
+        &::placeholder {
+          font-size: 15px;
+        }
+      }
+
+      .sendButton {
+        padding: 8px 20px;
+        background-color: $secondary-color;
+        color: white;
+        border: none;
+        border-radius: 25px 0px 0px 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid #ddd;
+        border-right: 1px solid transparent;
+
+        &:disabled {
+          background-color: $disabled-color;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    // پریلود
+    .loader {
+      border: 3px solid #f3f3f3;
+      border-top: 4px solid $secondary-color;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    // انیمیشن پیام
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+#fabhome-toggle-ai:checked ~ .fabhome-nav-ai {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-2%);
+  // transform: translateX(-10%);
+}
+#fabhome-toggle-ai:checked ~ .fabhome-button-ai {
+  background-image: none;
+}
+
+#fabhome-toggle-ai:checked ~ .fabhome-button-ai:before {
+  display: block;
+  transform: rotate(225deg);
+}
+
+#fabhome-toggle-ai:checked ~ .fabhome-button-ai:after {
+  display: block;
+  transform: rotate(135deg);
+}

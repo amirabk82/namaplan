@@ -1,0 +1,279 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, textarea,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+@font-face {
+  font-family: iransans;
+  src: url("../../content/fonts/IRANSansWeb.eot");
+  src: url("../../content/fonts/IRANSansWeb.ttf") format("truetype"), url("../../content/fonts/IRANSansWeb.woff2") format("woff2"), url("../../content/fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: iransans;
+  src: url("../../content/fonts/IRANSansWeb_Bold.eot");
+  src: url("../../content/fonts/IRANSansWeb_Bold.ttf") format("truetype"), url("../../content/fonts/IRANSansWeb_Bold.woff") format("woff"), url("../../content/fonts/Estedad-Bold.woff2") format("woff2"), url("../../content/fonts/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: iransans;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  direction: rtl;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: iransans, tahoma;
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+}
+
+form {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #3a98d6;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+a:hover {
+  color: #050724;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.login-wrapper {
+  width: 100%;
+  min-height: 100%;
+  background-image: url("../../content/img/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 8px;
+  padding-top: 60px;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 60px;
+  margin-left: auto;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 4px 10px 4px rgba(255, 255, 255, 0.3);
+          box-shadow: 0 4px 10px 4px rgba(255, 255, 255, 0.3);
+}
+
+@media only screen and (max-width: 768px) {
+  .form {
+    margin: 30px;
+  }
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tab-group li:nth-of-type(1) a {
+  border-radius: 0 8px 8px  0;
+}
+
+.tab-group li:nth-of-type(2) a {
+  border-radius: 8px 0 0 8px;
+}
+
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #707070;
+  font-size: 20px;
+  float: right;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.tab-group li a:hover {
+  background: #11187d;
+  color: #ffffff;
+}
+
+.tab-group .active a {
+  background: #080b3a;
+  color: #ffffff;
+}
+
+.tab-content > div {
+  display: none;
+}
+
+.tab-content > div:first-child {
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  color: #9601b0;
+  font-weight: bold;
+  margin: 0 0 40px;
+  font-size: 2rem;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ffffff;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.forgot {
+  margin-top: -8px;
+  text-align: right;
+  font-size: 1.4rem;
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin: 24px auto 8px;
+}
+/*# sourceMappingURL=login.css.map */
