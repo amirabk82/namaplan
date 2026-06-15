@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نماپلان</title>
+    <meta name="keywords" content="نماپلان" />
+    <!-- Search Engine 
+    <meta name="description" content="نماپلان">
+    <meta name="image" content="https://.com/content/img/logo.png">
+
+    <meta itemprop="name" content="نماپلان">
+    <meta itemprop="description" content="نماپلان">
+    <meta itemprop="image" content="https://.com/content/img/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="نماپلان">
+    <meta name="twitter:description" content="نماپلان">
+    <meta name="twitter:image:src" content="https://.com/content/img/logo.png">
+
+    <meta name="og:title" content="نماپلان">
+    <meta name="og:description" content="نماپلان">
+    <meta name="og:image" content="https://.com/content/img/logo.png">
+    <meta name="og:url" content="https://.com">
+    <meta name="og:site_name" content="نماپلان">
+    <meta name="og:type" content="website">
+-->
+    <link
+      rel="apple-touch-icon image_src"
+      sizes="180x180"
+      href="content/img/logo.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="content/img/apple-touch-icon.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      sizes="32x32"
+      href="content/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="content/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="stylesheet" href="content/css/main.css" />
+    <link rel="stylesheet" href="content/css/more.css" />
+    <link rel="stylesheet" href="content/css/form.css" />
+    <link rel="stylesheet" href="content/css/swiper-bundle.min.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+
+    <header class="header-fixed-height">
+      <div class="header-wrapper">
+        <div class="container">
+          <div class="header">
+            <div class="header-right">
+              <a href="#" title="صفحه اصلی" class="header-logo">
+                <img src="content/img/logo.png" alt="نماپلان" />
+              </a>
+              <nav class="header-nav">
+                <ul class="menu">
+                  <li class="menu-items">
+                    <a href="#" class="menu-link" title="صفحه اصلی"
+                      >صفحه اصلی</a
+                    >
+                  </li>
+                  <li class="menu-items">
+                    <a href="#" class="menu-link" title="سبک های کلاسیک"
+                      >سبک های کلاسیک</a
+                    >
+                  </li>
+                  <li class="menu-items">
+                    <a href="#" class="menu-link" title="سبک های مدرن"
+                      >سبک های مدرن</a
+                    >
+                  </li>
+                  <li class="menu-items">
+                    <a href="#" class="menu-link" title="مهندسین">مهندسین</a>
+                  </li>
+                  <li class="menu-items">
+                    <a href="#" class="menu-link" title="پلان های رایگان"
+                      >پلان های رایگان</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="header-left">
+              <div class="header-search">
+                <div>
+                  <div class="input-drop">
+                    <select class="header-search-type">
+                      <option selected="selected" value="vila">ویلایی</option>
+                      <option value="apartment">آپارتمانی</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <div class="input-drop">
+                    <select class="type-vila">
+                      <option selected="selected" value="طبقات">طبقات</option>
+                      <option value="A">همکف</option>
+                      <option value="B">دوبلکس</option>
+                      <option value="C">تریبلکس</option>
+                    </select>
+                    <select class="type-apartment d-none">
+                      <option selected="selected" value="عرض بنا">
+                        عرض بنا
+                      </option>
+                      <option value="A">4-7.99</option>
+                      <option value="B">8-10.99</option>
+                      <option value="C">11-15.99</option>
+                      <option value="D">+16</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="input-drop">
+                    <select class="type-vila">
+                      <option selected="selected" value="متراژ">متراژ</option>
+                      <option value="A">30-99.99</option>
+                      <option value="B">100-199.99</option>
+                      <option value="C">200-299.99</option>
+                      <option value="D">+300</option>
+                    </select>
+                    <select class="type-apartment d-none">
+                      <option selected="selected" value="مساحت">مساحت</option>
+                      <option value="A">40-70.99</option>
+                      <option value="B">71-100.99</option>
+                      <option value="C">101-130.99</option>
+                      <option value="D">131-160.99</option>
+                      <option value="E">161-200.99</option>
+                      <option value="F">+201</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="input-drop">
+                    <select class="type-vila">
+                      <option selected="selected" value="تعداد خواب">
+                        تعداد خواب
+                      </option>
+                      <option value="A">1-2</option>
+                      <option value="B">3-4</option>
+                      <option value="C">+5</option>
+                    </select>
+                    <select class="type-apartment d-none">
+                      <option selected="selected" value="تعداد واحد هر طبقه">
+                        تعداد واحد هر طبقه
+                      </option>
+                      <option value="B">2</option>
+                      <option value="C">3</option>
+                      <option value="D">+4</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="search-btn-wrapper">
+                    <button class="btn btn-icon btn-icon-only ex-search">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20.617 20.621"
+                      >
+                        <path
+                          d="M20.337,17.828l-4.015-4.015a.966.966,0,0,0-.685-.282h-.656a8.372,8.372,0,1,0-1.45,1.45v.656a.966.966,0,0,0,.282.685l4.015,4.015a.963.963,0,0,0,1.365,0l1.14-1.14A.971.971,0,0,0,20.337,17.828Zm-11.96-4.3a5.155,5.155,0,1,1,5.155-5.155A5.152,5.152,0,0,1,8.376,13.531Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="btn btn-warning call_info">
+                <div class="include-img">
+                  <img src="content/img/icon/ic-phone.svg" alt="" />
+                  <ul class="call_info__content">
+                    <li class="call_info__items">
+                      <div class="call_info__items_content">
+                        <span class="call_info__items_title">
+                          : طراحی ویلا و آپارتمان</span
+                        >
+                        <div class="call_info__items_contactHolder">
+                          <span class="call_info__items_name"
+                            >مهندس عزیز زاده</span
+                          >
+                          <a
+                            href="tel:01133408824"
+                            class="btn btn-warning call_info__items_numberBtn"
+                            >۰۱۱ ۳۳۴۰۸۸۲۴</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                    <li class="call_info__items">
+                      <div class="call_info__items_content">
+                        <span class="call_info__items_title">
+                          : طراحی و ساخت ویلا در مازندران</span
+                        >
+                        <div class="call_info__items_contactHolder">
+                          <span class="call_info__items_name"
+                            >مهندس بخشیان</span
+                          >
+                          <a
+                            href="tel:01133408824"
+                            class="btn btn-warning call_info__items_numberBtn"
+                            >۰۱۱ ۳۳۴۰۸۸۲۵</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="call_info__items">
+                      <div class="call_info__items_content">
+                        <span class="call_info__items_title">
+                          : طراحی و ساخت کلبه سوئیسی</span
+                        >
+                        <div class="call_info__items_contactHolder">
+                          <span class="call_info__items_name"
+                            >مهندس ولیپور</span
+                          >
+                          <a
+                            href="tel:01133408824"
+                            class="btn btn-warning call_info__items_numberBtn"
+                            >۰۱۱ ۳۳۱۱۴۶۱۱</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="call_info__items">
+                      <div class="call_info__items_content">
+                        <span class="call_info__items_title">
+                          : سرمایه گذاری ویلا و آپارتمان</span
+                        >
+                        <div class="call_info__items_contactHolder">
+                          <span class="call_info__items_name"
+                            >مهندس ارجمند</span
+                          >
+                          <a
+                            href="tel:01133408824"
+                            class="btn btn-warning call_info__items_numberBtn"
+                            >۰۱۱ ۳۳۱۱۴۶۱۱</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <a href="#" class="btn btn-light">ورود/ثبت نام</a>
+            </div>
+
+            <div class="left-tool">
+              <div class="nav-icon">
+                <img src="content/img/icon/ic-menu.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Instagram -->
+
+    <section class="container more-wrapper">
+      <header class="more-header">
+        <img src="content/img/icon/ic-instagram-primary.svg" alt="" />
+        <h1>پست های اینستاگرام</h1>
+      </header>
+      <div class="instagram-post-wrapper">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="instagram-post">
+              <figure>
+                <img src="content/img/intro-img.jpg" alt="عنوان پست" />
+              </figure>
+              <h2>پلان اتاق خواب والدین</h2>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="instagram-post">
+              <figure>
+                <img src="content/img/intro-img.jpg" alt="عنوان پست" />
+              </figure>
+              <h2>پلان اتاق خواب والدین</h2>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="instagram-post">
+              <figure>
+                <img src="content/img/intro-img.jpg" alt="عنوان پست" />
+              </figure>
+              <h2>پلان اتاق خواب والدین</h2>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="instagram-post">
+              <figure>
+                <img src="content/img/intro-img.jpg" alt="عنوان پست" />
+              </figure>
+              <h2>پلان اتاق خواب والدین</h2>
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="paginate">
+              <ul class="paging-t">
+                <li>
+                  <a href="#" class="current">1</a>
+                </li>
+                <li>
+                  <a href="#">2</a>
+                </li>
+                <li>
+                  <a href="#">3</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about_wrapper">
+      <div class="container mobile-p-0 space-top" style="margin: 80px auto">
+        <div class="row faq" style="margin: 0 auto">
+          <div class="faq-wrapper">
+            <header class="about-header-wrapper faq-header selected">
+              <img src="content/img/icon/ic-faq.svg" alt="faq" />
+              <div class="title-line">
+                <h6>سوالات متداول</h6>
+              </div>
+            </header>
+          </div>
+        </div>
+        <div class="row about-back">
+          <div>
+            <section class="faq-wrapper d-md-block">
+              <article>
+                <ul class="faq">
+                  <li class="col-12">
+                    <h4 class="accordion-head">
+                      <span>چگونه طرح خود را بفروشم؟</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="21.545"
+                        height="13.075"
+                        viewBox="0 0 21.545 13.075"
+                      >
+                        <path
+                          d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                          transform="translate(-0.398 -8.683)"
+                        />
+                      </svg>
+                    </h4>
+                    <div class="accordion-details">
+                      <p>
+                        نما پلان همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش
+                        در زمینه طراحی، نظارت و اجرای ساختمان با افتخار و به
+                        صورت تمام وقت در کنار شما حضوری پر رنگ دارد. نما پلان
+                        همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش در زمینه
+                        طراحی، نظارت و اجرای ساختمان با افتخار و به صورت تمام
+                        وقت در کنار شما حضوری پر رنگ دارد. نما پلان همراهی مطمئن
+                        و متخصص جهت راهنمایی و مشاوره فروش در زمینه ط
+                      </p>
+                    </div>
+                  </li>
+                  <li class="col-12">
+                    <h4 class="accordion-head">
+                      <span>چگونه طرح خود را بفروشم؟</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="21.545"
+                        height="13.075"
+                        viewBox="0 0 21.545 13.075"
+                      >
+                        <path
+                          d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                          transform="translate(-0.398 -8.683)"
+                        />
+                      </svg>
+                    </h4>
+                    <div class="accordion-details">
+                      <p>
+                        نما پلان همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش
+                        در زمینه طراحی، نظارت و اجرای ساختمان با افتخار و به
+                        صورت تمام وقت در کنار شما حضوری پر رنگ دارد. نما پلان
+                        همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش در زمینه
+                        طراحی، نظارت و اجرای ساختمان با افتخار و به صورت تمام
+                        وقت در کنار شما حضوری پر رنگ دارد. نما پلان همراهی مطمئن
+                        و متخصص جهت راهنمایی و مشاوره فروش در زمینه ط
+                      </p>
+                    </div>
+                  </li>
+                  <li class="col-12">
+                    <h4 class="accordion-head">
+                      <span>چگونه طرح خود را بفروشم؟</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="21.545"
+                        height="13.075"
+                        viewBox="0 0 21.545 13.075"
+                      >
+                        <path
+                          d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                          transform="translate(-0.398 -8.683)"
+                        />
+                      </svg>
+                    </h4>
+                    <div class="accordion-details">
+                      <p>
+                        نما پلان همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش
+                        در زمینه طراحی، نظارت و اجرای ساختمان با افتخار و به
+                        صورت تمام وقت در کنار شما حضوری پر رنگ دارد. نما پلان
+                        همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش در زمینه
+                        طراحی، نظارت و اجرای ساختمان با افتخار و به صورت تمام
+                        وقت در کنار شما حضوری پر رنگ دارد. نما پلان همراهی مطمئن
+                        و متخصص جهت راهنمایی و مشاوره فروش در زمینه ط
+                      </p>
+                    </div>
+                  </li>
+                  <li class="col-12">
+                    <h4 class="accordion-head">
+                      <span>چگونه طرح خود را بفروشم؟</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="21.545"
+                        height="13.075"
+                        viewBox="0 0 21.545 13.075"
+                      >
+                        <path
+                          d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                          transform="translate(-0.398 -8.683)"
+                        />
+                      </svg>
+                    </h4>
+                    <div class="accordion-details">
+                      <p>
+                        نما پلان همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش
+                        در زمینه طراحی، نظارت و اجرای ساختمان با افتخار و به
+                        صورت تمام وقت در کنار شما حضوری پر رنگ دارد. نما پلان
+                        همراهی مطمئن و متخصص جهت راهنمایی و مشاوره فروش در زمینه
+                        طراحی، نظارت و اجرای ساختمان با افتخار و به صورت تمام
+                        وقت در کنار شما حضوری پر رنگ دارد. نما پلان همراهی مطمئن
+                        و متخصص جهت راهنمایی و مشاوره فروش در زمینه ط
+                      </p>
+                    </div>
+                  </li>
+                  <div class="faq_more_btn col-12">
+                    <a href="#" class="faq_more_btn_link"
+                      >مشاهده بیشتر
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </ul>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram -->
+
+    <div class="container">
+      <a href="#" class="instagram-link" title="اینستاگرام">
+        <div class="insta-back"></div>
+        <div class="insta-info">
+          <img src="content/img/ic-instagram.png" alt="" />
+          <span>اینستاگرام</span>
+          <span>@Namaplan</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Bottom Link -->
+
+    <div class="bottom-link-wrapper">
+      <div class="container bottom-link-holder">
+        <ul class="bottom-link">
+          <li><a href="#" title="خانه">خانه</a></li>
+          <li><a href="#" title="آخرین طرح ها">آخرین طرح ها</a></li>
+          <li><a href="#" title="سوالات متداول">سوالات متداول</a></li>
+          <li><a href="#" title="مجله نماپلان">مجله نماپلان</a></li>
+          <li><a href="#" title="راهنما">راهنما</a></li>
+        </ul>
+
+        <img class="to-up" src="content/img/icon/ic-up.png" alt="" />
+      </div>
+    </div>
+    <!-- Footer -->
+
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="footer-contact">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="contact-social">
+                <span>نماپلان را دنبال کنید</span>
+                <ul class="footer-social">
+                  <li>
+                    <a href="#"><img src="content/img/icon/ic-insta.png" /></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="content/img/icon/ic-tel.png" /></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="content/img/icon/ic-twit.png" /></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="contact-text">
+                <span>پست الکترونیکی</span>
+                <a href="mailto:info@namaplan.ir">namaplan@gmail.com</a>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <a href="#" class="contact-item contact-item-green">
+                <div class="contact-item-img">
+                  <img src="content/img/icon/ic-contact-whatsapp.svg" alt="" />
+                </div>
+
+                <div class="contact-item-text">
+                  <span> مشاوره واتساپ </span>
+                  <p>هفت روز هفته ، از ساعت 8 الی 24</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-5">
+              <div class="contact-item contact-item-blue">
+                <div class="contact-item-img">
+                  <img src="content/img/icon/ic-contact-tel.png" alt="" />
+                </div>
+
+                <div class="contact-item-text">
+                  <span> تماس : 33408824-011 </span>
+                  <p>شنبه الی پنجشنبه ، از ساعت 9 الی 17</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="footer-site-info">
+                <div>
+                  <a href="#" class="footer-site-logo" title="نماپلان">
+                    <img src="content/img/logo-b.png" alt="نماپلان" />
+                  </a>
+                </div>
+                <p>
+                  شرکت نماپلان با بیش از ۱۵ سال سابقه تجربه در صنعت ساختمان،
+                  شامل طراحی و ساخت ویلا و آپارتمان و همچنین سرمایه‌گذاری در
+                  حوزه املاک، محیطی مطمئن و حرفه‌ای فراهم آورده است تا
+                  سرمایه‌گذاران با خیالی آسوده از خدمات یک مشاور موفق بهره‌مند
+                  شوند.
+                </p>
+                <div class="foter-links-holder">
+                  <ul class="footer-site-link">
+                    <li>
+                      <a href="#" title="طراحی و ساخت ویلا"
+                        >طراحی و ساخت ویلا</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" title="ویلای مدرن">ویلای مدرن</a>
+                    </li>
+                    <li>
+                      <a href="#" title="ویلای کلاسیک">ویلای کلاسیک</a>
+                    </li>
+                    <li>
+                      <a href="#" title="ویلای همکف ">ویلای همکف</a>
+                    </li>
+                    <li>
+                      <a href="#" title="ویلای دوبلکس">ویلای دوبلکس</a>
+                    </li>
+                    <li>
+                      <a href="#" title="ویلای تریبلکس">ویلای تریبلکس</a>
+                    </li>
+                  </ul>
+                  <ul class="footer-site-link extra-link">
+                    <li>
+                      <a href="#" title="طراحی و ساخت آپارتمان"
+                        >طراحی و ساخت آپارتمان</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" title="آپارتمان مدرن">آپارتمان مدرن</a>
+                    </li>
+                    <li>
+                      <a href="#" title="آپارتمان کلاسیک">آپارتمان کلاسیک</a>
+                    </li>
+                    <li>
+                      <a href="#" title="طراحی و ساخت کلبه سوئیسی"
+                        >طراحی و ساخت کلبه سوئیسی</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" title="پلان های رایگان">پلان های رایگان</a>
+                    </li>
+
+                  </ul>
+                  <ul class="footer-site-link extra-link">
+                    <li>
+                      <a href="#" title="محاسبه آنلاین هزینه ساخت ساختمان"
+                        >محاسبه آنلاین هزینه ساخت ساختمان</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" title="محاسبه آنلاین هزینه جواز ساخت"
+                        >محاسبه آنلاین هزینه جواز ساخت</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        title="محاسبه آنلاین هزینه بازسازی و دکوراسیون"
+                        >محاسبه آنلاین هزینه بازسازی و دکوراسیون</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" title="آپارتمان">آپارتمان</a>
+                    </li>
+                    <li>
+                      <a href="#" title="تجاری">تجاری</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 footer-namad-holder">
+              <div class="footer-namad">
+                <span class="footer-namad-title"
+                  >آسوده به نماپلان اعتماد کنید
+                </span>
+                <div class="row">
+                  <div class="col-md-3 col-6">
+                    <div class="footer-namad-item">
+                      <img src="content/img/namad.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="footer-namad-item">
+                      <img src="content/img/namad.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="footer-namad-item">
+                      <img src="content/img/namad.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="footer-namad-item">
+                      <img src="content/img/namad.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright-wrapper">
+        <div class="container footer-copyright">
+          <span>
+            کلیه حقوق مادی و معنوی این سایت متعلق به شرکت نماپلان می باشد</span
+          >
+          <span style="direction: ltr">© 2021 All Rights Reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="menu-overlay">
+      <div class="menu-back"></div>
+      <div class="menu-popup">
+        <div class="menu-popup-header">
+          <div class="menu-close">
+            <img src="content/img/icon/ic-close.svg" alt="" />
+          </div>
+
+          <a href="#" class="btn btn-light sign-btn">ورود/ثبت نام</a>
+        </div>
+
+        <ul class="menu-side">
+          <li><a href="#" title="سبک های کلاسیک">سبک های کلاسیک</a></li>
+          <li><a href="#" title="سبک های مدرن">سبک های مدرن</a></li>
+          <li><a href="#" title="مهندسین">مهندسین</a></li>
+          <li><a href="#" title="پلان های رایگان">پلان های رایگان</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="content/scripts/jquery-3.1.1.min.js"></script>
+    <script src="content/scripts/swiper-bundle.min.js"></script>
+    <script src="content/scripts/form.js"></script>
+    <script src="content/scripts/main-script.js"></script>
+
+    <script></script>
+  </body>
+</html>

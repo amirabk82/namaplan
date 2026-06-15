@@ -1,0 +1,2924 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>طراحی ویلا با هوش مصنوعی | نماپلان</title>
+  <!-- <meta name="description" content="طراحی ویلا با هوش مصنوعی - معرفی بهترین سایت‌ها و ابزارهای AI برای طراحی پلان، مدل سه‌بعدی و رندر ویلا"> -->
+  <meta name="description"
+    content="ویلای خود را در نماپالان با هوش مصنوعی (AI) طراحی کنید. تیم معماری ما آن طرح را به نقشه ای قابل اجرا تبدیل کرده و میسازد. از ایده تا کلید.">
+  <meta name="keywords" content="طراحی ویلا با هوش مصنوعی, سایت طراحی ویلا, برنامه طراحی ویلا, AI architecture">
+
+  <link rel="apple-touch-icon image_src" sizes="180x180" href="content/img/logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="content/img/apple-touch-icon.png" />
+  <link rel="shortcut icon" type="image/png" sizes="32x32" href="content/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="content/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="content/css/main.css" />
+  <link rel="stylesheet" href="content/css/more.css" />
+  <link rel="stylesheet" href="content/css/form.css" />
+  <link rel="stylesheet" href="content/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="content/css/chatbox.css" />
+  <link rel="stylesheet" href="content/css/services.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* background: #eef2f5; */
+      background-color: #ffffff;
+      color: #1a2c3e;
+      /* padding: 2rem 1rem; */
+      padding-top: 0;
+      direction: rtl;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .hero-cost {
+      text-align: center;
+      margin-bottom: 2rem;
+      margin-top: 20px;
+    }
+
+    .hero-cost h1 {
+      /* font-size: 2rem; */
+      font-weight: 700;
+      color: #080b3a;
+      margin-bottom: 0.5rem;
+      font-size: clamp(15px, 4vw, 3rem);
+      white-space: nowrap;
+    }
+
+    .hero-cost p {
+      /* color: #2c5a3b; */
+      color: #080b3a;
+      font-weight: 500;
+      font-size: 1.2rem;
+      /* background: #e9f3eb; */
+      background: #080b3a0a;
+      display: inline-block;
+      padding: 0.3rem 1.5rem;
+      border-radius: 50px;
+    }
+
+    .cost-card {
+      /* background: #ffffff; */
+      /* border-radius: 32px; */
+      /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05); */
+      /* padding: 2rem; */
+      margin-bottom: 2rem;
+      /* border: 1px solid #e2edf2; */
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      /* border-right: 5px solid #080b3a; */
+      /* padding-right: 1rem; */
+      margin-bottom: 1.5rem;
+      /* color: #1f3b2c; */
+      color: #080b3a;
+      width: fit-content;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0px;
+    }
+
+    .section-title:before {
+      content: none;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-group label {
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #080b3a;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid #cfdfe8;
+      border-radius: 24px;
+      font-size: 1.5rem;
+      background: #fefefe;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus,
+    .input-group textarea:focus {
+      border-color: #2b7a3e;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(43, 122, 62, 0.1);
+    }
+
+    .options-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.3rem;
+    }
+
+    .option-btn {
+      background: #f4f9fc;
+      border: 1px solid #cfdfe8;
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #1f3b2c;
+    }
+
+    .option-btn.active {
+      background: #080b3a;
+      border-color: #080b3a;
+      color: white;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .checkbox-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: normal;
+      background: #f8fbfd;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      border: 1px solid #e2edf2;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .radio-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: normal;
+      background: #f8fbfd;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      border: 1px solid #e2edf2;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .range-price {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .range-price input {
+      flex: 2;
+    }
+
+    .price-display {
+      background: #eef3f0;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+      min-width: 130px;
+      text-align: center;
+    }
+
+    .btn-disabled {
+      /* background: #a0b8a8; */
+      background: #080b3a;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-radius: 50px;
+      margin-top: 1rem;
+      cursor: not-allowed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      opacity: 0.7;
+      margin-top: 40px;
+    }
+
+    .soon-badge {
+      background: #f0b429;
+      color: #2c2b26;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      padding: 0.2rem 0.8rem;
+      margin-right: 0.8rem;
+    }
+
+    .article-wrapper {
+      background: #ffffff;
+      border-radius: 32px;
+      /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05); */
+      -webkit-box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      margin-top: 50px;
+      border: 1px solid #e2edf2;
+
+    }
+
+    .article-header {
+      border-bottom: 2px solid #e2edf2;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .article-header h2 {
+      font-size: 2rem;
+      /* color: #1e4a2f; */
+      color: #080b3a;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-meta {
+      color: #6c868e;
+      font-size: 1.2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .article-content h3 {
+      /* font-size: 1.7rem;
+      color: #080b3a;
+      margin: 1.5rem 0 0.8rem 0;
+      padding-right: 0.5rem;
+      border-right: 4px solid #080b3a; */
+    }
+
+    .article-content h4 {
+      font-size: 1.6rem;
+      color: #080b3a;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0.8rem 1.5rem 1rem 0;
+    }
+
+    .article-content li {
+      margin-bottom: 0.4rem;
+    }
+
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      font-size: 1.4rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    @media (max-width: 386px) {
+      .article-content table {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 340px) {
+      .article-content table {
+        font-size: 1rem;
+      }
+    }
+
+    .article-content th,
+    .article-content td {
+      border: 1px solid #cfdfe8;
+      padding: 0.6rem;
+      text-align: right;
+    }
+
+    .article-content th {
+      background: #e9eaff;
+      font-weight: 600;
+      color: #080b3a;
+    }
+
+    .article-content blockquote {
+      background: #e9eaff;
+      border-right: 4px solid #cc9c33;
+      padding: 0.8rem 1.2rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #080b3a;
+    }
+
+    .note-ai {
+      font-size: 1.1rem;
+      color: #6c868e;
+      margin-top: 0.5rem;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        /* padding: 1rem; */
+      }
+
+      .cost-card,
+      .article-wrapper {
+        padding: 1.2rem;
+      }
+
+      .article-header h2 {
+        font-size: 1.4rem;
+      }
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #1e4a2f;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 50px;
+      z-index: 999;
+      font-size: 0.85rem;
+    }
+
+    .hidden-field {
+      display: none;
+    }
+
+    #city {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .call-link {
+      background-color: #E67E22;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.2s;
+      padding: 5px;
+      border-radius: 20px;
+      color: #fff;
+      gap: 10px;
+    }
+
+    .call-link:hover {
+      background-color: #e67d22ca;
+    }
+
+    @media(max-width: 371px) {
+      .call-link {
+        font-size: 14px;
+      }
+    }
+
+    @media(max-width: 338px) {
+      .call-link {
+        font-size: 13px;
+      }
+    }
+
+    .additional-information {
+      margin-top: 50px;
+    }
+
+    .faq li h4 {
+      position: relative;
+    }
+
+    /* .faq li svg {
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+    } */
+
+    @media only screen and (max-width: 768px) {
+      .about-back {
+        background: #dadaff !important;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .about-header-wrapper.faq-header {
+        margin-right: 0px !important;
+      }
+
+      .faq-wrapper .accordion-head svg {
+        width: 16px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .faq-wrapper .accordion-head svg {
+        width: 14px;
+      }
+    }
+
+    .design-villa-with-ai-wrapper .article-header .date {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 16px;
+      color: #4f4f4f;
+    }
+
+    @media only screen and (max-width: 590px) {
+      .article-header {
+        display: block;
+      }
+
+      .design-villa-with-ai-wrapper .article-header .date {
+        font-size: 14px;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      .design-villa-with-ai-wrapper .article-header h2 {
+        font-size: 1.3rem;
+      }
+
+      .design-villa-with-ai-wrapper .article-header .date {
+        font-size: 13px;
+      }
+    }
+
+    @media only screen and (max-width: 370px) {
+      .design-villa-with-ai-wrapper .article-header h2 {
+        /* font-size: 1.2rem; */
+        text-align: center;
+      }
+
+    }
+    .mini-slider-wrapper .mini-slider-header .slider-header-title h4{
+      color: #090b3b;
+    }
+    .mini-slider-wrapper .slider-item-wrapper, .mini-slider-wrapper .melk-list-wrapper{
+      background: none;
+    }
+    section.container.mini-slider-wrapper{
+      margin-top: 140px;
+      margin-bottom: 140px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <header class="header-fixed-height">
+    <div class="header-wrapper">
+      <div class="container">
+        <div class="header">
+          <div class="header-right">
+            <a href="#" title="صفحه اصلی" class="header-logo">
+              <img src="./content/img/logo.png" alt="نماپلان" />
+            </a>
+            <nav class="header-nav">
+              <ul class="menu">
+                <li class="menu-items">
+                  <a class="menu-link have-sub" href="#" title="خانه">پروژه ها</a>
+                  <ul class="submenu-holder">
+                    <li class="submenu-items">
+                      <a class="submenu-link" href="#">طراحی و ساخت ویلا</a>
+                    </li>
+                    <li class="submenu-items">
+                      <a class="submenu-link" href="#">طراحی و ساخت آپارتمان</a>
+                    </li>
+                    <li class="submenu-items">
+                      <a class="submenu-link" href="#">طراحی و ساخت کلبه سوئیسی</a>
+                    </li>
+                    <li class="submenu-items subMenu">
+                      <a class="submenu-link" href="#">آکادمی نماپلان
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                          <path fill-rule="evenodd"
+                            d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </a>
+                      <ul class="submenu-holder-l2">
+                        <li class="submenu-items-l2">
+                          <a class="submenu-link-l2" href="#">
+                            دوره های آموزشی معماری
+                          </a>
+                        </li>
+                        <li class="submenu-items-l2">
+                          <a class="submenu-link-l2" href="#">پلان های هنرجویان نماپلان [ رایگان ]</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-items">
+                  <a class="menu-link online-tools have-sub" href="#" title="خانه">ابزار های آنلاین</a>
+                  <ul class="submenu-holder">
+                    <li class="submenu-items">
+                      <a class="submenu-link" href="#">محاسبه آنلاین هزینه ساخت</a>
+                    </li>
+                    <li class="submenu-items">
+                      <a class="submenu-link" href="#">محاسبه آنلاین هزینه جواز ساخت</a>
+                    </li>
+                    <li class="submenu-items">
+                      <a class="submenu-link" href="#">محاسبه آنلاین هزینه بازسازی</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-items">
+                  <a class="menu-link" href="#" title="سفارش طراحی">سرمایه گذاری ملک</a>
+                </li>
+                <li class="menu-items">
+                  <a class="menu-link" href="#" title="مشاهده رزومه">سفارش طراحی</a>
+                </li>
+                <li class="menu-items">
+                  <a class="menu-link" href="#" title="درباره ما">درباره ما</a>
+                </li>
+                <li class="menu-items">
+                  <a class="menu-link" href="#" title="تماس با ما">تماس با ما</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="header-left">
+            <div class="btn btn-warning call_info">
+              <div class="include-img">
+                <img src="./content/img/icon/ic-phone.svg" alt="" />
+                <ul class="call_info__content">
+                  <li class="call_info__items">
+                    <div class="call_info__items_content">
+                      <span class="call_info__items_title">
+                        : طراحی ویلا و آپارتمان</span>
+                      <div class="call_info__items_contactHolder">
+                        <span class="call_info__items_name">مهندس عزیز زاده</span>
+                        <a href="tel:01133408824" class="btn btn-warning call_info__items_numberBtn">۰۱۱ ۳۳۴۰۸۸۲۴</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="call_info__items">
+                    <div class="call_info__items_content">
+                      <span class="call_info__items_title">
+                        : طراحی و ساخت ویلا در مازندران</span>
+                      <div class="call_info__items_contactHolder">
+                        <span class="call_info__items_name">مهندس بخشیان</span>
+                        <a href="tel:01133408824" class="btn btn-warning call_info__items_numberBtn">۰۱۱ ۳۳۴۰۸۸۲۵</a>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="call_info__items">
+                    <div class="call_info__items_content">
+                      <span class="call_info__items_title">
+                        : طراحی و ساخت کلبه سوئیسی</span>
+                      <div class="call_info__items_contactHolder">
+                        <span class="call_info__items_name">مهندس ولیپور</span>
+                        <a href="tel:01133408824" class="btn btn-warning call_info__items_numberBtn">۰۱۱ ۳۳۱۱۴۶۱۱</a>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="call_info__items">
+                    <div class="call_info__items_content">
+                      <span class="call_info__items_title">
+                        : سرمایه گذاری ویلا و آپارتمان</span>
+                      <div class="call_info__items_contactHolder">
+                        <span class="call_info__items_name">مهندس ارجمند</span>
+                        <a href="tel:01133408824" class="btn btn-warning call_info__items_numberBtn">۰۱۱ ۳۳۱۱۴۶۱۱</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="#" class="btn btn-light btn-icon">
+              <img src="./content/img/icon/ic-user.svg" alt="" />
+              <span> ورود </span>
+            </a>
+          </div>
+
+          <div class="left-tool">
+            <div class="search-fixed-menu">
+              <div class="link-icon link-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.617 20.621">
+                  <path fill="#fff"
+                    d="M20.337,17.828l-4.015-4.015a.966.966,0,0,0-.685-.282h-.656a8.372,8.372,0,1,0-1.45,1.45v.656a.966.966,0,0,0,.282.685l4.015,4.015a.963.963,0,0,0,1.365,0l1.14-1.14A.971.971,0,0,0,20.337,17.828Zm-11.96-4.3a5.155,5.155,0,1,1,5.155-5.155A5.152,5.152,0,0,1,8.376,13.531Z" />
+                </svg>
+              </div>
+            </div>
+            <div class="nav-icon">
+              <img src="./content/img/icon/ic-menu.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-cost">
+      <h1>طراحی ویلا با هوش مصنوعی | نمای ساختمان</h1>
+      <p>در حال توسعه توسط تیم نماپلان | به‌زودی امکان تولید طرح اولیه نما بر اساس مشخصات پروژه فراهم می‌شود.</p>
+    </div>
+
+    <!-- فرم محاسبه -->
+    <div class="cost-card price-calculator calc-detail show">
+      <!-- <h2 class="section-title">📐 محاسبه آنلاین هزینه ساخت ویلا | هوشمند AI</h2> -->
+
+      <div class="row">
+
+
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">📍 متراژ کل طبقات (زیربنا - متر مربع)</label>
+            <input type="number" id="builtArea" value="180" step="10" min="50" max="800" placeholder="متراژ کل ساختمان">
+          </div>
+        </div>
+
+        <!-- نوع ساختمان: ویلایی یا آپارتمانی -->
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">🏠 نوع ساختمان</label>
+            <div class="radio-group" id="buildingTypeGroup">
+              <label><input type="radio" name="buildingType" value="ویلایی" checked> ویلایی</label>
+              <label><input type="radio" name="buildingType" value="آپارتمانی"> آپارتمانی</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 pb-4" id="floorsVillaGroup">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">📐 تعداد طبقات (ویلایی)</label>
+            <div class="radio-group">
+              <label><input type="radio" name="villaFloors" value="همکف" checked> همکف</label>
+              <label><input type="radio" name="villaFloors" value="دوبلکس"> دوبلکس</label>
+              <label><input type="radio" name="villaFloors" value="تریبلکس"> تریبلکس</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">🎨 سبک معماری (چند گزینه)</label>
+            <div class="radio-group" id="styleGroup">
+              <label><input type="radio" name="architecture" value="مدرن"> مدرن</label>
+              <label><input type="radio" name="architecture" value="کلاسیک"> کلاسیک</label>
+              <label><input type="radio" name="architecture" value="سوئیسی A-frame"> سوئیسی A-frame</label>
+              <label><input type="radio" name="architecture" value="مینیمال"> مینیمال</label>
+              <label><input type="radio" name="architecture" value="نئوکلاسیک"> نئوکلاسیک</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">🏞️ محل پروژه (منطقه‌ی جغرافیایی)</label>
+            <div class="options-group">
+              <span class="option-btn active">ساحلی</span>
+              <span class="option-btn">جنگلی</span>
+              <span class="option-btn">کوهستانی</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">💰 بودجه کل ساخت (تومان)</label>
+            <div class="range-price">
+              <input type="range" id="budgetRange" min="800" max="25000" value="4800" step="100">
+              <span class="price-display" id="budgetValue">۴,۸۰۰ میلیون تومان</span>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">📍 موقعیت مکانی</label>
+
+            <select id="province" autocomplete="off">
+              <option value="" selected>انتخاب استان</option>
+
+              <option value="آذربایجان شرقی">آذربایجان شرقی</option>
+              <option value="آذربایجان غربی">آذربایجان غربی</option>
+              <option value="اردبیل">اردبیل</option>
+              <option value="اصفهان">اصفهان</option>
+              <option value="البرز">البرز</option>
+              <option value="ایلام">ایلام</option>
+              <option value="بوشهر">بوشهر</option>
+              <option value="تهران">تهران</option>
+              <option value="چهار محال و بختیاری">چهار محال و بختیاری</option>
+              <option value="خراسان جنوبی">خراسان جنوبی</option>
+              <option value="خراسانی رضوی">خراسانی رضوی</option>
+              <option value="خراسان شمالی">خراسان شمالی</option>
+              <option value="خوزستان">خوزستان</option>
+              <option value="زنجان">زنجان</option>
+              <option value="سمنان">سمنان</option>
+              <option value="سیستان و بلوچستان">سیستان و بلوچستان</option>
+              <option value="فارس">فارس</option>
+              <option value="قزوین">قزوین</option>
+              <option value="قم">قم</option>
+              <option value="کردستان">کردستان</option>
+              <option value="کرمان">کرمان</option>
+              <option value="کرمانشاه">کرمانشاه</option>
+              <option value="کهگیلویه و بویراحمد">کهگیلویه و بویراحمد</option>
+              <option value="گلستان">گلستان</option>
+              <option value="گیلان">گیلان</option>
+              <option value="لرستان">لرستان</option>
+              <option value="مازندران">مازندران</option>
+              <option value="مرکزی">مرکزی</option>
+              <option value="هرمزگان">هرمزگان</option>
+              <option value="همدان">همدان</option>
+              <option value="یزد">یزد</option>
+            </select>
+
+            <select id="city">
+              <option value="ساری">ساری</option>
+              <option value="بابل">بابل</option>
+              <option value="آمل">آمل</option>
+              <option value="قائمشهر">قائمشهر</option>
+              <option value="بهشهر">بهشهر</option>
+              <option value="چالوس">چالوس</option>
+              <option value="نکا">نکا</option>
+              <option value="بابلسر">بابلسر</option>
+              <option value="تنکابن">تنکابن</option>
+              <option value="نوشهر">نوشهر</option>
+              <option value="فریدونکنار">فریدونکنار</option>
+              <option value="رامسر">رامسر</option>
+              <option value="جویبار">جویبار</option>
+              <option value="محمودآباد">محمودآباد</option>
+              <option value="امیرکلا">امیرکلا</option>
+              <option value="نور">نور</option>
+              <option value="گلوگاه">گلوگاه</option>
+              <option value="زیرآب">زیرآب</option>
+              <option value="عباس‌ آباد">عباس‌ آباد</option>
+              <option value="خلیل شهر">خلیل شهر</option>
+              <option value="رستم کلا">رستم کلا</option>
+              <option value="شیرود">شیرود</option>
+              <option value="چمستان">چمستان</option>
+              <option value="کلاردشت">کلاردشت</option>
+              <option value="ارطه">ارطه</option>
+              <option value="سلمان‌ شهر">سلمان‌ شهر</option>
+              <option value="سورک">سورک</option>
+              <option value="پل سفید">پل سفید</option>
+              <option value="شیرگاه">شیرگاه</option>
+              <option value="کیاکلا">کیاکلا</option>
+              <option value="بهنمیر">بهنمیر</option>
+              <option value="هادی‌ شهر">هادی‌ شهر</option>
+              <option value="رویان">رویان</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">🧱 نوع سازه</label>
+            <div class="options-group">
+              <span class="option-btn">LSF</span>
+              <span class="option-btn active">سازه فلزی</span>
+              <span class="option-btn">سازه بتنی</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-4 pb-4 hidden-field" id="floorsApartmentGroup">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">🔢 تعداد طبقات (آپارتمانی)</label>
+            <input type="number" id="apartmentFloors" min="1" max="20" value="4" placeholder="تعداد طبقات">
+          </div>
+        </div>
+
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">⛰️ شیب زمین</label>
+            <div class="options-group">
+              <span class="option-btn">20 تا 30 درجه</span>
+              <span class="option-btn active">30 تا 45 درجه</span>
+              <span class="option-btn">45 تا 60 درجه</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">⭐ اولویت اصلی</label>
+            <select id="prioritySelect">
+              <option>سرعت اجرا</option>
+              <option>صرفه اقتصادی</option>
+              <option>لوکس بودن</option>
+              <option>سازگاری با محیط زیست</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 pb-4">
+          <div class="input-group price-calculator calculate-item" style="margin-bottom: 1.5rem;">
+            <label class="header">✨ امکانات اضافی (استخر، سونا، جکوزی، باربیکیو، آبنما)</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="گاردن"> روف گاردن</label>
+              <label><input type="checkbox" value="استخر"> استخر استاندارد</label>
+              <label><input type="checkbox" value="سونا"> سونا</label>
+              <label><input type="checkbox" value="جکوزی"> جکوزی</label>
+              <label><input type="checkbox" value="باربیکیو"> باربیکیو</label>
+              <label><input type="checkbox" value="آبنما"> آبنما</label>
+              <label><input type="checkbox" value="سینما"> سینمای خانگی</label>
+              <label><input type="checkbox" value="ورزشی"> سالن ورزشی</label>
+              <label><input type="checkbox" value="فضا"> سالن فضای باز</label>
+              <label><input type="checkbox" value="پارکینگ"> پارکینگ زیرزمینی</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-md-6 pb-4">
+          <div class="input-group price-calculator calculate-item">
+            <label class="header">🧱 نوع متریال</label>
+            <div class="options-group">
+              <span class="option-btn">چوب</span>
+              <span class="option-btn active">سنگ</span>
+              <span class="option-btn">آجر</span>
+              <span class="option-btn">شیشه</span>
+              <span class="option-btn">بتن</span>
+              <span class="option-btn">فولاد</span>
+              <span class="option-btn">مخلوط مواد طبیعی</span>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-md-6 pb-4">
+          <div class="input-group price-calculator calculate-item" style="margin-bottom: 1.5rem;">
+            <label class="header">🧱 نوع متریال </label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="چوب"> چوب</label>
+              <label><input type="checkbox" value="سنگ"> سنگ</label>
+              <label><input type="checkbox" value="آجر"> آجر</label>
+              <label><input type="checkbox" value="شیشه"> شیشه</label>
+              <label><input type="checkbox" value="بتن"> بتن</label>
+              <label><input type="checkbox" value="فولاد"> فولاد</label>
+              <label><input type="checkbox" value="مخلوط"> مخلوط مواد طبیعی</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="input-group additional-information">
+        <label>📝 توضیحات تکمیلی (اختیاری)</label>
+        <textarea rows="2" placeholder="مثال: نمای شیشه‌ای، زمین شیبدار، نزدیک به دریا و..."></textarea>
+      </div>
+
+      <button class="btn-disabled" id="disabledBtn">
+        🎯 طراحی ویلا با هوش مصنوعی <span class="soon-badge">به زودی فعال می‌شود</span>
+      </button>
+
+
+      <section class="container mini-slider-wrapper">
+        <header class="mini-slider-header">
+          <div class="slider-header-title">
+            <img src="./content/img/icon/ic-home.svg" alt="پلان های ویلایی" />
+            <h4>پروژه های مشابه واقعی نماپلان(اجراشده)</h4>
+          </div>
+          <!-- <div class="slider-header-tab">
+          <ul class="slider-tab">
+            <li class="selected">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.741 20.809">
+                <path
+                  d="M11.146.723,8.492,6.1l-5.937.866a1.3,1.3,0,0,0-.719,2.219l4.3,4.186L5.115,19.286A1.3,1.3,0,0,0,7,20.655l5.311-2.792,5.311,2.792a1.3,1.3,0,0,0,1.886-1.369l-1.016-5.913,4.3-4.186a1.3,1.3,0,0,0-.719-2.219L16.132,6.1,13.478.723a1.3,1.3,0,0,0-2.333,0Z"
+                  transform="translate(-1.441 0.001)" />
+              </svg>
+              <span>ویژه</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.782 20.809">
+                <path
+                  d="M21.472,3.67a6.352,6.352,0,0,0-8.667.632l-.915.943L10.975,4.3A6.351,6.351,0,0,0,2.308,3.67a6.669,6.669,0,0,0-.46,9.656l8.988,9.28a1.456,1.456,0,0,0,2.1,0l8.988-9.28a6.665,6.665,0,0,0-.455-9.656Z"
+                  transform="translate(0.001 -2.248)" />
+              </svg>
+              <span>محبوب</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.28 21.28">
+                <path
+                  d="M7.884,20.024a2.128,2.128,0,1,0,2.128,2.128A2.125,2.125,0,0,0,7.884,20.024ZM1.5,3V5.128H3.628L7.458,13.2,6.022,15.811a2.057,2.057,0,0,0-.266,1.021A2.134,2.134,0,0,0,7.884,18.96H20.652V16.832H8.331a.263.263,0,0,1-.266-.266l.032-.128L9.054,14.7h7.927a2.118,2.118,0,0,0,1.862-1.1L22.653,6.7a1.04,1.04,0,0,0,.128-.511,1.067,1.067,0,0,0-1.064-1.064H5.979L4.979,3ZM18.524,20.024a2.128,2.128,0,1,0,2.128,2.128A2.125,2.125,0,0,0,18.524,20.024Z"
+                  transform="translate(-1.5 -3)" />
+              </svg>
+              <span>پرفروش</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.112 22.908">
+                <path
+                  d="M6.444,19.416a2.827,2.827,0,0,0,1.98-.9A2.82,2.82,0,0,0,9.24,16.5a2.912,2.912,0,0,0,2.784,2.916A2.912,2.912,0,0,0,9.24,22.332a2.771,2.771,0,0,0-.816-2.016A2.827,2.827,0,0,0,6.444,19.416Zm2.8-8.64a5.515,5.515,0,0,0,3.852-1.764,5.493,5.493,0,0,0,1.584-3.936A5.493,5.493,0,0,0,16.26,9.012a5.569,5.569,0,0,0,3.864,1.764,5.562,5.562,0,0,0-2.748.852A5.767,5.767,0,0,0,15.4,13.7a5.643,5.643,0,0,0-.72,2.8,5.521,5.521,0,0,0-1.584-3.948A5.479,5.479,0,0,0,9.24,10.776ZM13.224,23.7a4.286,4.286,0,0,0,4.092-4.284A4.287,4.287,0,0,0,21.4,23.7a4.287,4.287,0,0,0-4.08,4.284,4.133,4.133,0,0,0-1.188-2.964A4.2,4.2,0,0,0,13.224,23.7ZM21.4,18.012a4.266,4.266,0,0,0,4.068-4.3A4.286,4.286,0,0,0,29.556,18a4.286,4.286,0,0,0-4.092,4.284A4.244,4.244,0,0,0,21.4,18.012Z"
+                  transform="translate(-6.444 -5.076)" />
+              </svg>
+              <span>لوکس</span>
+            </li>
+          </ul>
+        </div> -->
+          <!-- <div class="slider-header-link">
+            <a href="#" class="link link-dark link-sm">
+              نمایش همه
+              <img src="content/img/icon/link-arrow-black.svg" alt="" />
+            </a>
+          </div> -->
+        </header>
+        <div class="container slider-item-wrapper">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها" href="#loginError">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+
+                      <div class="item-tag">
+                        <span class="new-tag">جدید</span>
+                        <span class="special-tag">ویژه</span>
+                      </div>
+
+                      <figure class="img-thumb">
+                        <img src="content/img/sample2.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/sample1.jpg" alt="عنوان نقشه" />
+                      </figure>
+
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-right">
+                      <div class="plan-item-code">
+                        <span>#کد محصول</span>
+                        <span>A23B42</span>
+                      </div>
+                      <div class="plan-item-star">
+                        <span class="item-star">★</span>
+                        <span class="item-star-number"> 4.5 </span>
+                      </div>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <a href="#" class="more-plan-link">
+                    <div class="btn btn-warning">
+                      پلان های بیشتر
+                    </div>
+                  </a>
+                </section>
+              </div>
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+          </div>
+
+          <div class="swiper hide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+          </div>
+
+          <div class="swiper hide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+          </div>
+
+          <div class="swiper hide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide plan-item-slide">
+                <section class="plan-item">
+                  <div class="plan-item-top">
+                    <div class="plan-item-tools">
+                      <a class="add-favorite" title="ذخیره در علاقمندی ها">
+                        <img src="content/img/icon/ic-heart-gray.svg" class="d-none" alt="" />
+                        <img src="content/img/icon/ic-heart-line.svg" alt="" />
+                      </a>
+                      <a title="شبکه های اجتماعی" href="#shareToSocial">
+                        <img src="content/img/icon/ic-share.svg" alt="" />
+                      </a>
+                    </div>
+                    <a href="#quickWatch" class="plan-item-watch">
+                      <img src="content/img/icon/ic-eye.svg">
+                      <span>مشاهده سریع</span>
+                    </a>
+                  </div>
+                  <div class="plan-item-img">
+                    <a href="#" title="عنوان نقشه">
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                      <figure>
+                        <img src="content/img/intro-img.jpg" alt="عنوان نقشه" />
+                      </figure>
+                    </a>
+                  </div>
+                  <header class="plan-item-title">
+                    <a href="#">
+                      <h2>نقشه خانه 4 خوابه</h2>
+                    </a>
+                    <div class="plan-item-price">
+                      <div class="item-price-off">
+                        <span>2500000</span>
+                        <span>15%</span>
+                      </div>
+                      <div class="item-price">
+                        <span>2900000</span>
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="plan-item-info">
+                    <div class="plan-item-code">
+                      <span>#کد محصول</span>
+                      <span>A23B42</span>
+                    </div>
+                    <ul class="plan-item-details">
+                      <li title="ویلایی">
+                        <img src="content/img/icon/ic-home.png" alt="" />
+                        <span>ویلایی</span>
+                      </li>
+                      <li title="دوبلکس">
+                        <img src="content/img/icon/ic-apartment.png" alt="" />
+                        <span>دوبلکس</span>
+                      </li>
+                      <li title="36 متر">
+                        <img src="content/img/icon/ic-box.png" alt="" />
+                        <span>36 متر</span>
+                      </li>
+                      <li title="3">
+                        <img src="content/img/icon/ic-bed.png" alt="" />
+                        <span>3</span>
+                      </li>
+                      <li title="120 مترمربع">
+                        <img src="content/img/icon/ic-tape.png" alt="" />
+                        <span>120 مترمربع</span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- call link -->
+       <a href="tel: 01133408824">
+        <div class="call-link">
+          <img src="./content/img/icon/ic-phone.svg" alt="مشاوره رایگان طراحی و ساخت صفر تا صد">مشاوره رایگان طراحی و ساخت صفر تا صد
+        </div>
+       </a>
+
+      <!-- <div class="note-ai">* ابزار هوشمند نماپلان در حال توسعه – برای مشاهده جدیدترین ابزارهای AI مقاله زیر را بخوانید.
+      </div> -->
+    </div>
+
+    <!-- مقاله کامل -->
+    <div class="article-wrapper design-villa-with-ai-wrapper">
+      <div class="article-header">
+        <h2>بیش از 10 سایت و برنامه طراحی ویلا با هوش مصنوعی (AI)</h2>
+        <div class="date">
+          <span>آخرین بروزرسانی</span>
+          <span>۱۴۰۵/۰۰/۰۰</span>
+        </div>
+        <!-- <div class="article-meta">
+          <span>📅 پنج‌شنبه ۲۹ آبان ۱۴۰۴</span>
+          <span>⏱️ ۷ دقیقه زمان مطالعه</span>
+        </div> -->
+      </div>
+      <div class="article-content">
+        <p>تصور کنید می‌توانید تنها با چند کلیک، ویلای رویایی خود را طراحی کنید؛ بدون آن‌که ساعت‌ها پای نقشه‌ها،
+          نرم‌افزارهای پیچیده یا هزینه‌های سنگین معماران صرف کنید. در سال ۲۰۲۵، این رؤیا دیگر محال نیست! <strong>سایت
+            طراحی ویلا با هوش مصنوعی</strong> این امکان را به شما می‌دهد تا پلان، مدل سه‌بعدی، رندر و حتی نمای داخلی و
+          خارجی ویلا را در عرض چند دقیقه خلق کنید. از ایده‌پردازی سریع و کانسپت‌های خلاقانه گرفته تا طراحی دقیق پلان و
+          مدل سه‌بعدی، هوش مصنوعی به یک همکار حرفه‌ای برای معماران و حتی علاقه‌مندان به طراحی خانه تبدیل شده است.</p>
+        <p>چه به دنبال یک ابزار رایگان برای آزمایش ایده‌های اولیه باشید و چه بخواهید پروژه‌ای حرفه‌ای و واقعی را آماده
+          کنید، سایت‌های طراحی ویلا با هوش مصنوعی ۲۰۲۵ ابزارها و امکاناتی ارائه می‌دهند که سرعت، دقت و خلاقیت شما را
+          چندین برابر می‌کند. در این مقاله، بهترین پلتفرم‌ها، اپلیکیشن‌ها و برنامه‌های طراحی ویلا با AI را بررسی می‌کنیم
+          تا شما بتوانید بدون دغدغه، ویلای رویایی‌تان را از ذهن به واقعیت نزدیک کنید.</p>
+
+
+        <!-- accardion -->
+        <ul class="design-villa-with-ai m-0 p-0">
+          <li class="col-12">
+            <h3 class="accordion-head">
+              <strong>بهترین سایت طراحی ویلا با هوش مصنوعی در سال ۲۰۲۵</strong>
+              <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075" viewBox="0 0 21.545 13.075">
+                <path
+                  d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                  transform="translate(-0.398 -8.683)" />
+              </svg>
+            </h3>
+            <div class="accordion-details">
+              <p>در سال ۲۰۲۵، ابزارها و سایت‌های «طراحی ویلا با هوش مصنوعی» بسیار پیشرفته شده‌اند. ابزارهایی مانند
+                Google Nano
+                banana، Google Studio AI، Archivinci، Firefly، Promai، RenderAI، DALL-E، MyArchitectAI و Lovart AI، به
+                همراه
+                چند گزینه دیگر، از بهترین انتخاب‌ها برای طراحی ویلا با هوش مصنوعی به شمار می‌آیند.</p>
+
+              <h4>معیارهای انتخاب بهترین سایت طراحی ویلا</h4>
+              <ul>
+                <li><strong>دقت در تولید پلان و مدل سه‌بعدی:</strong> ابزار باید ابعاد زمین، تعداد اتاق‌ها و ویژگی‌های
+                  معماری
+                  را به درستی درک کند.</li>
+                <li><strong>کیفیت رندر نهایی:</strong> خروجی واقع‌گرایانه برای پرزنتیشن و مطالعات اولیه.</li>
+                <li><strong>امکان استفاده رایگان یا هزینه معقول:</strong> ابزارهایی با نسخه رایگان یا قیمت مناسب.</li>
+                <li><strong>پشتیبانی از سبک‌های معماری متنوع:</strong> مدرن، کلاسیک، مینیمال، نئوکلاسیک، ویلای دوبلکس.
+                </li>
+                <li><strong>قابلیت شخصی‌سازی و تعامل با کاربر:</strong> ویرایش نور، متریال، اصلاح مدل سه‌بعدی.</li>
+                <li><strong>سرعت تولید و عملکرد ابری:</strong> دسترسی از دستگاه‌های مختلف.</li>
+              </ul>
+
+              <h4>جدول مقایسه ابزارهای کلیدی</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th>نام ابزار</th>
+                    <th>نوع کاربرد</th>
+                    <th>مزایا</th>
+                    <th>مناسب برای</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Google Nano Banana</td>
+                    <td>ایده‌پردازی سریع</td>
+                    <td>سبک، سریع</td>
+                    <td>مبتدیان، دانشجویان</td>
+                  </tr>
+                  <tr>
+                    <td>Google Studio AI</td>
+                    <td>مدل سه‌بعدی</td>
+                    <td>رایگان، سریع</td>
+                    <td>همه کاربران</td>
+                  </tr>
+                  <tr>
+                    <td>Archivinci</td>
+                    <td>تبدیل 2D به 3D</td>
+                    <td>تخصصی، قابل اعتماد</td>
+                    <td>معماران حرفه‌ای</td>
+                  </tr>
+                  <tr>
+                    <td>Adobe Firefly</td>
+                    <td>رندر و تصویرسازی</td>
+                    <td>کیفیت بالا، بافت واقعی</td>
+                    <td>طراحان حرفه‌ای</td>
+                  </tr>
+                  <tr>
+                    <td>Promai</td>
+                    <td>طراحی مفهومی سریع</td>
+                    <td>ساده، بودجه کم</td>
+                    <td>مبتدی و متوسط</td>
+                  </tr>
+                  <tr>
+                    <td>RenderAI</td>
+                    <td>رندرینگ معماری</td>
+                    <td>واقع‌گرایی قوی</td>
+                    <td>دفاتر طراحی</td>
+                  </tr>
+                  <tr>
+                    <td>DALL·E</td>
+                    <td>تولید تصاویر خلاقانه</td>
+                    <td>خلاقیت بالا</td>
+                    <td>طراحان گرافیک و معماری</td>
+                  </tr>
+                  <tr>
+                    <td>MyArchitectAI</td>
+                    <td>پلان، مدل 3D</td>
+                    <td>خروجی قابل اجرا</td>
+                    <td>معماران و سازندگان</td>
+                  </tr>
+                  <tr>
+                    <td>Lovart AI</td>
+                    <td>نمای لوکس و هنری</td>
+                    <td>مناسب ویلا مدرن و لاکچری</td>
+                    <td>طراحان دکوراسیون</td>
+                  </tr>
+                  <tr>
+                    <td>AiHouse</td>
+                    <td>طراحی داخلی و خارجی</td>
+                    <td>پانوراما، ابزار حرفه‌ای</td>
+                    <td>شرکت‌های معماری</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+
+          <li class="col-12">
+            <h3 class="accordion-head">
+              <strong>برنامه طراحی ویلا با هوش مصنوعی (معرفی + کاربردها)</strong>
+              <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075" viewBox="0 0 21.545 13.075">
+                <path
+                  d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                  transform="translate(-0.398 -8.683)" />
+              </svg>
+            </h3>
+            <div class="accordion-details">
+              <p>برنامه‌های طراحی پلان ویلا مانند MyArchitectAI، Maket.AI و Archivinci می‌توانند تنها با وارد کردن متراژ
+                زمین،
+                تعداد اتاق‌ها و سبک معماری، یک پلان کامل و استاندارد تولید کنند. همچنین برای طراحی سه‌بعدی، ابزارهایی
+                مثل
+                Google Studio AI، RenderAI و Lovart AI مدل 3D کامل ویلا را ایجاد می‌کنند.</p>
+
+              <h4>اپلیکیشن‌های موبایلی طراحی ویلا (اندروید و iOS)</h4>
+              <ul>
+                <li><strong>Planner 5D:</strong> طراحی پلان، مدل‌سازی سه‌بعدی، تولید نما و رندر.</li>
+                <li><strong>Home Design 3D:</strong> مناسب برای طراحی داخلی و خارجی.</li>
+                <li><strong>Room Planner + AI Tools:</strong> چیدمان هوشمند و بازسازی.</li>
+                <li><strong>MagicPlan:</strong> ساخت پلان با دوربین برای پروژه‌های سریع.</li>
+              </ul>
+            </div>
+          </li>
+
+
+          <li class="col-12">
+            <h3 class="accordion-head">
+              <strong>برنامه طراحی ویلا با هوش مصنوعی رایگان (Free AI Tool)</strong>
+              <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075" viewBox="0 0 21.545 13.075">
+                <path
+                  d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                  transform="translate(-0.398 -8.683)" />
+              </svg>
+            </h3>
+            <div class="accordion-details">
+              <p>اگر به دنبال طراحی بدون پرداخت هزینه هستید، ابزارهایی مانند DALL-E، Google Studio AI، Promai، Lovart
+                AI،
+                Maket.AI (نسخه رایگان) و Canva AI می‌توانند خروجی قابل قبولی ارائه دهند. نسخه رایگان برای ایده‌پردازی،
+                کانسپت
+                اولیه و شبیه‌سازی مناسب است اما محدودیت‌هایی مانند کیفیت رندر کمتر، تعداد خروجی محدود و نداشتن نقشه
+                اجرایی
+                دارد.</p>
+            </div>
+          </li>
+
+
+          <li class="col-12">
+            <h3 class="accordion-head">
+              <strong>مزایا و معایب طراحی ویلا با هوش مصنوعی</strong>
+              <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075" viewBox="0 0 21.545 13.075">
+                <path
+                  d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                  transform="translate(-0.398 -8.683)" />
+              </svg>
+            </h3>
+            <div class="accordion-details">
+              <h4>مزایا</h4>
+              <ul>
+                <li>⚡ سرعت بسیار بالا در ایده‌پردازی و تولید خروجی (چند ثانیه، ده‌ها طرح)</li>
+                <li>💰 کاهش چشمگیر هزینه طراحی اولیه</li>
+                <li>🎨 افزایش خلاقیت و تنوع طرح‌ها (ترکیب سبک‌های مختلف)</li>
+                <li>🔄 امکان تغییر سریع بدون هزینه اضافه</li>
+              </ul>
+              <h4>معایب</h4>
+              <ul>
+                <li>🚫 عدم رعایت ضوابط شهرداری و مقررات معماری واقعی (کاربری، تراکم، سازه)</li>
+                <li>📊 محدودیت دیتاست در سبک‌های بومی و ایرانی</li>
+                <li>🧠 عدم شناخت نیازهای واقعی کاربر (فقط ایده‌پردازی)</li>
+              </ul>
+              <blockquote>«هوش مصنوعی خلاقیت، عقلانیت و حتی فرایندهای خودکار را تقویت خواهد کرد… توانایی‌های شهودی که
+                پیش‌تر
+                در ذهن معماران باتجربه نهفته بود، با کمک AI آزاد می‌شود و چندین برابر رشد می‌کند.» – پاتریک شوماخر
+              </blockquote>
+            </div>
+          </li>
+
+
+          <li class="col-12">
+            <h3 class="accordion-head">
+              <strong>چه زمانی طراحی انسانی بهتر است؟</strong>
+              <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075" viewBox="0 0 21.545 13.075">
+                <path
+                  d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                  transform="translate(-0.398 -8.683)" />
+              </svg>
+            </h3>
+            <div class="accordion-details">
+              <p>طراحی انسانی برای نقشه‌های فنی، مجوز ساخت، پروژه‌های با هویت خاص و ویلاهایی که باید با اقلیم محلی
+                هماهنگ
+                باشند ضروری است. هوش مصنوعی به همراه معمار حرفه‌ای ترکیب ایده‌آل را می‌سازد: AI برای خلاقیت و سرعت،
+                معمار برای
+                دقت و اجرا.</p>
+
+            </div>
+          </li>
+
+          <p style="margin-top: 70px; background: #e9eaff; color: #080b3a; padding: 0.8rem; border-radius: 20px;">
+            <strong>نتیجه‌گیری:</strong> طراحی ویلا با هوش مصنوعی در سال ۲۰۲۵ به یک دستیار قدرتمند معماری تبدیل شده
+            است.
+            ابزارهایی مانند MyArchitectAI، RenderAI، Firefly و DALL-E فرایند طراحی را سریع‌تر، کم‌هزینه‌تر و
+            خلاقانه‌تر
+            کرده‌اند. نسخه‌های رایگان برای کانسپت‌سازی کافی هستند اما برای اجرا نیاز به معمار حرفه‌ای دارید. بهترین
+            رویکرد، ترکیب هوش مصنوعی و تجربه انسانی است.
+          </p>
+
+        </ul>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <!-- faq: -->
+    <section class="about_wrapper">
+      <div class="container mobile-p-0 space-top" style="margin: 80px auto">
+        <div class="row faq" style="margin: 0 auto">
+          <div class="faq-wrapper">
+            <header class="about-header-wrapper faq-header selected">
+              <img src="content/img/icon/ic-faq.svg" alt="faq" />
+              <div class="title-line">
+                <h6>سوالات متداول</h6>
+              </div>
+            </header>
+          </div>
+        </div>
+        <div class="row about-back">
+          <div>
+            <section class="faq-wrapper d-md-block">
+              <article>
+                <ul class="faq">
+                  <li class="col-12">
+                    <h4 class="accordion-head">
+                      <span>آیا می‌توانم بدون دانش معماری، با هوش مصنوعی ویلای خود را طراحی کنم؟</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075"
+                        viewBox="0 0 21.545 13.075">
+                        <path
+                          d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                          transform="translate(-0.398 -8.683)" />
+                      </svg>
+                    </h4>
+
+                    <div class="accordion-details">
+                      <p>
+                        بله، ابزارهایی مانند Google Studio AI و DALL-E برای کاربران غیرحرفه‌ای طراحی شده‌اند. اما برای
+                        نقشه‌های اجرایی نیاز به معمار دارید.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="col-12">
+                    <h4 class="accordion-head">
+                      <span>آیا طراحی رایگان با هوش مصنوعی محدودیت دارد؟</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075"
+                        viewBox="0 0 21.545 13.075">
+                        <path
+                          d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                          transform="translate(-0.398 -8.683)" />
+                      </svg>
+                    </h4>
+                    <div class="accordion-details">
+                      <p>
+                        بله، کیفیت رندر پایین‌تر، تعداد خروجی محدود و نبود نقشه‌های فنی از محدودیت‌هاست. مناسب برای
+                        ایده‌پردازی اولیه.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="col-12">
+                    <h4 class="accordion-head">
+                      <span>ترکیب هوش مصنوعی و طراحی انسانی چه مزیتی دارد؟</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="21.545" height="13.075"
+                        viewBox="0 0 21.545 13.075">
+                        <path
+                          d="M10.333,21.412.745,11.823a1.184,1.184,0,0,1,0-1.675L1.863,9.03a1.184,1.184,0,0,1,1.673,0l7.635,7.6,7.635-7.6a1.184,1.184,0,0,1,1.673,0L21.6,10.148a1.184,1.184,0,0,1,0,1.675l-9.588,9.589A1.184,1.184,0,0,1,10.333,21.412Z"
+                          transform="translate(-0.398 -8.683)" />
+                      </svg>
+                    </h4>
+                    <div class="accordion-details">
+                      <p>
+                        هوش مصنوعی سرعت و خلاقیت می‌آورد، معماران حرفه‌ای ضوابط شهرداری و جزئیات اجرایی را رعایت
+                        می‌کنند.
+                      </p>
+                    </div>
+                  </li>
+                  <!-- <div class="faq_more_btn col-12">
+                    <a href="#" class="faq_more_btn_link">مشاهده بیشتر
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                      </svg>
+                    </a>
+                  </div> -->
+                </ul>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div> <!--end container div-->
+
+
+  <!-- Bottom Link -->
+
+  <div class="bottom-link-wrapper">
+    <div id="to_top_wrapper" class="container bottom-link-holder">
+      <ul class="bottom-link">
+        <li><a href="#" title="خانه">خانه</a></li>
+        <li><a href="#" title="آخرین طرح ها">آخرین طرح ها</a></li>
+        <li><a href="#" title="مشاهده کاتالوگ">مشاهده کاتالوگ</a></li>
+        <li><a href="#" title="سوالات متداول">سوالات متداول</a></li>
+        <li><a href="#" title="مجله نماپلان">مجله نماپلان</a></li>
+        <li><a href="#" title="راهنما">راهنما</a></li>
+      </ul>
+      <div class="to_up_wrapper">
+        <img id="to_top" class="to-up fix" src="./content/img/icon/ic-up.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+
+  <!-- footer -->
+
+  <footer class="footer-wrapper">
+    <div class="container">
+      <div class="footer-contact">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="contact-social">
+              <span>نماپلان را دنبال کنید</span>
+              <ul class="footer-social">
+                <li>
+                  <a href="#"><img src="./content/img/icon/ic-insta.png" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="./content/img/icon/ic-tel.png" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="./content/img/icon/ic-twit.png" /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="contact-text">
+              <span>پست الکترونیکی</span>
+              <a href="mailto:info@namaplan.ir">namaplan@gmail.com</a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <a href="#" class="contact-item contact-item-green">
+              <div class="contact-item-img">
+                <img src="./content/img/icon/ic-contact-whatsapp.svg" alt="" />
+              </div>
+
+              <div class="contact-item-text">
+                <span> مشاوره واتساپ </span>
+                <p>هفت روز هفته ، از ساعت 8 الی 24</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <div class="contact-item contact-item-blue">
+              <div class="contact-item-img">
+                <img src="./content/img/icon/ic-contact-tel.png" alt="" />
+              </div>
+
+              <div class="contact-item-text">
+                <span> تماس : 33408824-011 </span>
+                <p>شنبه الی پنجشنبه ، از ساعت 9 الی 17</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="footer-site-info">
+              <div>
+                <a href="#" class="footer-site-logo" title="نماپلان">
+                  <img src="./content/img/logo-b.png" alt="نماپلان" />
+                </a>
+              </div>
+              <p>
+                شرکت نماپلان با بیش از ۱۵ سال سابقه تجربه در صنعت ساختمان،
+                شامل طراحی و ساخت ویلا و آپارتمان و همچنین سرمایه‌گذاری در
+                حوزه املاک، محیطی مطمئن و حرفه‌ای فراهم آورده است تا
+                سرمایه‌گذاران با خیالی آسوده از خدمات یک مشاور موفق بهره‌مند
+                شوند.
+              </p>
+              <div class="foter-links-holder">
+                <ul class="footer-site-link">
+                  <li>
+                    <a href="#" title="طراحی و ساخت ویلا">طراحی و ساخت ویلا</a>
+                  </li>
+                  <li>
+                    <a href="#" title="ویلای مدرن">ویلای مدرن</a>
+                  </li>
+                  <li>
+                    <a href="#" title="ویلای کلاسیک">ویلای کلاسیک</a>
+                  </li>
+                  <li>
+                    <a href="#" title="ویلای همکف ">ویلای همکف</a>
+                  </li>
+                  <li>
+                    <a href="#" title="ویلای دوبلکس">ویلای دوبلکس</a>
+                  </li>
+                  <li>
+                    <a href="#" title="ویلای تریبلکس">ویلای تریبلکس</a>
+                  </li>
+                </ul>
+                <ul class="footer-site-link extra-link">
+                  <li>
+                    <a href="#" title="طراحی و ساخت آپارتمان">طراحی و ساخت آپارتمان</a>
+                  </li>
+                  <li>
+                    <a href="#" title="آپارتمان مدرن">آپارتمان مدرن</a>
+                  </li>
+                  <li>
+                    <a href="#" title="آپارتمان کلاسیک">آپارتمان کلاسیک</a>
+                  </li>
+                  <li>
+                    <a href="#" title="طراحی و ساخت کلبه سوئیسی">طراحی و ساخت کلبه سوئیسی</a>
+                  </li>
+                  <li>
+                    <a href="#" title="پلان های رایگان">پلان های رایگان</a>
+                  </li>
+                </ul>
+                <ul class="footer-site-link extra-link">
+                  <li>
+                    <a href="#" title="محاسبه آنلاین هزینه ساخت ساختمان">محاسبه آنلاین هزینه ساخت ساختمان</a>
+                  </li>
+                  <li>
+                    <a href="#" title="محاسبه آنلاین هزینه جواز ساخت">محاسبه آنلاین هزینه جواز ساخت</a>
+                  </li>
+                  <li>
+                    <a href="#" title="محاسبه آنلاین هزینه بازسازی و دکوراسیون">محاسبه آنلاین هزینه بازسازی و
+                      دکوراسیون</a>
+                  </li>
+                  <li>
+                    <a href="#" title="آپارتمان">آپارتمان</a>
+                  </li>
+                  <li>
+                    <a href="#" title="تجاری">تجاری</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 footer-namad-holder">
+            <div class="footer-namad">
+              <span class="footer-namad-title">آسوده به نماپلان اعتماد کنید
+              </span>
+              <div class="row">
+                <div class="col-md-3 col-6">
+                  <div class="footer-namad-item">
+                    <img src="./content/img/namad.png" alt="" />
+                  </div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="footer-namad-item">
+                    <img src="./content/img/namad.png" alt="" />
+                  </div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="footer-namad-item">
+                    <img src="./content/img/namad.png" alt="" />
+                  </div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="footer-namad-item">
+                    <img src="./content/img/namad.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright-wrapper">
+      <div class="container footer-copyright">
+        <span>
+          کلیه حقوق مادی و معنوی این سایت متعلق به شرکت نماپلان می باشد</span>
+        <span style="direction: ltr">© 2021 All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- call icon -->
+  <a href="tel:01133408824" class="fix-phone-calling">
+    <img src="content/img/icon/ic-phone.svg" alt="" />
+  </a>
+
+
+
+  <div class="menu-overlay">
+    <div class="menu-back"></div>
+    <div class="menu-popup">
+      <div class="menu-popup-header">
+        <div class="menu-close">
+          <img src="./content/img/icon/ic-close.svg" alt="" />
+        </div>
+
+        <a href="#" class="btn btn-light sign-btn">ورود/ثبت نام</a>
+      </div>
+
+      <ul class="menu-side">
+        <li><a href="#" title="سبک های کلاسیک">سبک های کلاسیک</a></li>
+        <li><a href="#" title="سبک های مدرن">سبک های مدرن</a></li>
+        <li><a href="#" title="مهندسین">مهندسین</a></li>
+        <li><a href="#" title="پلان های رایگان">پلان های رایگان</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <script>
+    // Range budget
+    const budgetRange = document.getElementById('budgetRange');
+    const budgetSpan = document.getElementById('budgetValue');
+    if (budgetRange && budgetSpan) {
+      function updateBudget() {
+        let val = parseInt(budgetRange.value);
+        budgetSpan.innerText = val.toLocaleString('fa-IR') + ' میلیون تومان';
+      }
+      budgetRange.addEventListener('input', updateBudget);
+      updateBudget();
+    }
+
+    // Disabled button toast
+    const disabledBtn = document.getElementById('disabledBtn');
+    if (disabledBtn) {
+      disabledBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let toast = document.createElement('div');
+        toast.className = 'toast-msg';
+        toast.innerText = '✨ ابزار هوش مصنوعی نماپلان به زودی فعال خواهد شد. هم‌اکنون می‌توانید مقاله راهنما را مطالعه کنید.';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+      });
+    }
+
+    // Active toggle for option-btn groups (سازه, محل پروژه, شیب)
+    document.querySelectorAll('.options-group').forEach(group => {
+      group.querySelectorAll('.option-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+
+    // Conditional visibility for floors based on building type
+    const buildingTypeRadios = document.querySelectorAll('input[name="buildingType"]');
+    const floorsVillaDiv = document.getElementById('floorsVillaGroup');
+    const floorsApartmentDiv = document.getElementById('floorsApartmentGroup');
+
+    function updateFloorsFields() {
+      const selected = document.querySelector('input[name="buildingType"]:checked').value;
+      if (selected === 'ویلایی') {
+        floorsVillaDiv.classList.remove('hidden-field');
+        floorsApartmentDiv.classList.add('hidden-field');
+      } else {
+        floorsVillaDiv.classList.add('hidden-field');
+        floorsApartmentDiv.classList.remove('hidden-field');
+      }
+    }
+    buildingTypeRadios.forEach(radio => radio.addEventListener('change', updateFloorsFields));
+    updateFloorsFields(); // initial state
+
+
+    // select location mazandaran
+    const province = document.getElementById("province");
+    const city = document.getElementById("city");
+
+    province.addEventListener("change", function () {
+      if (this.value === "مازندران") {
+        city.style.display = "block";
+      } else {
+        city.style.display = "none";
+      }
+    })
+
+  </script>
+
+  <!-- swiper -->
+  <script src="content/scripts/swiper-bundle.min.js"></script>
+  <script>
+    // اسلایدر اصلی
+    const mainSwiper = new Swiper(".main-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 12,
+      navigation: {
+        nextEl: ".main-next",
+        prevEl: ".main-prev",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        576: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+        },
+      },
+    });
+
+    // اسلایدرهای داخلی
+    document.querySelectorAll(".inner-swiper").forEach((el) => {
+      new Swiper(el, {
+        loop: true,
+        navigation: {
+          nextEl: el.querySelector(".inner-next"),
+          prevEl: el.querySelector(".inner-prev"),
+        },
+      });
+    });
+  </script>
+  <!-- end swiper -->
+
+  <!-- custom select option script -->
+  <script>
+    const selects = document.querySelectorAll(".custom-select");
+
+    selects.forEach((select) => {
+      const selected = select.querySelector(".selected");
+      const optionsContainer = select.querySelector(".options");
+      const options = select.querySelectorAll(".option");
+
+      selected.addEventListener("click", (e) => {
+        e.stopPropagation(); // جلوگیری از بسته شدن بلافاصله
+
+        // بستن بقیه سلکت‌ها
+        selects.forEach((otherSelect) => {
+          if (otherSelect !== select) {
+            otherSelect.querySelector(".options").classList.remove("show");
+            otherSelect.querySelector(".selected").classList.remove("active");
+          }
+        });
+
+        // باز و بسته کردن سلکت فعلی
+        optionsContainer.classList.toggle("show");
+        selected.classList.toggle("active");
+      });
+
+      options.forEach((option) => {
+        option.addEventListener("click", () => {
+          selected.textContent = option.textContent;
+          optionsContainer.classList.remove("show");
+          selected.classList.remove("active");
+        });
+      });
+
+      // بستن منو وقتی بیرون کلیک می‌کنی
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".custom-select")) {
+          optionsContainer.classList.remove("show");
+          selected.classList.remove("active");
+        }
+      });
+    });
+  </script>
+
+  <script src="./content/scripts/jquery-3.1.1.min.js"></script>
+  <script src="./content/scripts/form.js"></script>
+  <script src="./content/scripts/main-script.js"></script>
+
+</body>
+
+</html>

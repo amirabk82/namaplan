@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به ناحیه کاربری </title>
+    <meta name="keywords" content="نماپلان" />
+    <!-- Search Engine 
+    <meta name="description" content="نماپلان">
+    <meta name="image" content="https://.com/content/img/logo.png">
+
+    <meta itemprop="name" content="نماپلان">
+    <meta itemprop="description" content="نماپلان">
+    <meta itemprop="image" content="https://.com/content/img/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="نماپلان">
+    <meta name="twitter:description" content="نماپلان">
+    <meta name="twitter:image:src" content="https://.com/content/img/logo.png">
+
+    <meta name="og:title" content="نماپلان">
+    <meta name="og:description" content="نماپلان">
+    <meta name="og:image" content="https://.com/content/img/logo.png">
+    <meta name="og:url" content="https://.com">
+    <meta name="og:site_name" content="نماپلان">
+    <meta name="og:type" content="website">
+-->
+    <link rel="apple-touch-icon image_src" sizes="180x180" href="content/img/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="content/img/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="content/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="content/img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel=" stylesheet" href="content/css/form.css">
+    <link rel=" stylesheet" href="content/css/login.css">
+
+
+</head>
+
+<body>
+
+    <section class="login-wrapper">
+
+        <div class="login-form">
+            <div class="form">
+
+                <ul class="tab-group">
+                    <li class="tab active"><a href="#login">ورود</a></li>
+                    <li class="tab"><a href="#signup">ثبت نام</a></li>
+
+                </ul>
+                <div class="logo-wrapper text-center">
+                    <a href="#" title="نماپلان">
+                        <img src="content/img/logo-color.png" alt="نماپلان" />
+                    </a>
+                </div>
+                <div class="tab-content">
+
+
+                    <div id="login">
+                        <h1>ورود به حساب کاربری</h1>
+
+                        <form action="/" method="post">
+
+                            <div class="input-text">
+                                <label> شماره موبایل </label>
+    
+                                <input type="text">
+                            </div>
+                            <div class="input-text">
+                                <label> کلمه عبور </label>
+    
+                                <input type="password">
+                            </div>
+                            <p class="forgot">
+                                <a class="link" href="#forgot">
+                                کلمه عبور خود را فراموش کردم
+                                </a>
+                            </p>
+                        <div class="btn-wrapper">
+                            
+                            <button class="btn btn-success btn-lg" />ورود</button>
+                        </div>
+
+                        </form>
+
+                    </div>
+                    <div id="signup">
+                        <h1>ثبت نام</h1>
+
+                        <form action="/" method="post">
+
+                            <div class="input-text">
+                                <label> نام  و نام خانوادگی </label>
+    
+                                <input type="text">
+                            </div>
+                            <div class="input-text">
+                                <label> شماره موبایل </label>
+    
+                                <input type="text">
+                            </div>
+                            <div class="input-text">
+                                <label> ایمیل (اختیاری) </label>
+    
+                                <input type="email">
+                            </div>
+
+                            <div class="input-check">
+                                <label>
+                                    <input type="checkbox">
+                                        <span>قوانین و مقرارت را می پذیرم.</span>
+                                </label>
+                                <a href="#" class="link">(مطالعه قوانین) </a>
+                            </div>
+                            <div class="btn-wrapper">
+                            
+                                <button class="btn btn-success btn-lg" />ثبت نام</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div id="forgot">
+                        <h1>فراموشی کلمه عبور</h1>
+
+                        <form action="/" method="post">
+
+                            <div class="input-text">
+                                <label> شماره موبایل </label>
+    
+                                <input type="text">
+                            </div>
+                        <div class="btn-wrapper">
+                            
+                            <button class="btn btn-success btn-lg" />درخواست</button>
+                        </div>
+
+                        </form>
+
+                    </div>
+                </div><!-- tab-content -->
+
+            </div> <!-- /form -->
+        </div>
+    </section>
+
+
+
+    <script src="content/scripts/jquery-3.1.1.min.js"></script>
+    <script src="content/scripts/form.js"></script>
+
+<script>
+    
+    $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+    var $this = $(this),
+        label = $this.prev('label');
+
+        if (e.type === 'keyup') {
+                if ($this.val() === '') {
+            label.removeClass('active highlight');
+            } else {
+            label.addClass('active highlight');
+            }
+        } else if (e.type === 'blur') {
+            if( $this.val() === '' ) {
+                label.removeClass('active highlight'); 
+                } else {
+                label.removeClass('highlight');   
+                }   
+        } else if (e.type === 'focus') {
+        
+        if( $this.val() === '' ) {
+                label.removeClass('highlight'); 
+                } 
+        else if( $this.val() !== '' ) {
+                label.addClass('highlight');
+                }
+        }
+
+    });
+
+    $('.tab a , .forgot a').on('click', function (e) {
+    
+    e.preventDefault();
+    
+    $('.tab-group .tab').removeClass('active');
+    $(this).parent().addClass('active');
+    $(this).parent().siblings().removeClass('active');
+    
+    target = $(this).attr('href');
+
+    $('.tab-content > div').not(target).hide();
+    
+    $(target).fadeIn(600);
+    
+    });
+</script>
+</body>
+
+</html>

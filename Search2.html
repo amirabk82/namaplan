@@ -1,0 +1,452 @@
+
+    <link rel="stylesheet" href="/content/css/main.css" />
+    <link rel="stylesheet" href="/content/css/more.css?ver=1010" />
+    <link rel="stylesheet" href="/content/css/form.css" />
+    <link rel="stylesheet" href="/content/css/swiper-bundle.min.css" />
+
+    <style>
+        /* والدهای احتمالی که overflow دارند */
+        /*.search-filter-wrapper,
+        .search-filter-item-wrapper,
+        .search-filter-item-container,
+        .custom-select,
+        .options_filter {
+            overflow: visible !important;
+        }
+*/
+        /* ظرف اصلی */
+       /* #filterSelect {
+            position: relative !important;
+        }*/
+
+            /* لیست گزینه‌ها */
+            #filterSelect .options_filter {
+                /*position: relative !important;*/
+                /*z-index: 9999 !important;*/
+            }
+
+            /* گروه دارای زیرمنو */
+            #filterSelect .option_group {
+                position: relative !important;
+            }
+
+            /* ردیف L */
+            #filterSelect .option_parent {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                padding: 10px 12px !important;
+                cursor: pointer !important;
+                user-select: none !important;
+                text-align: center !important; /* وسط‌چین کردن متن */
+            }
+
+                /* متن L وسط‌چین شود (مانند بقیه گزینه‌ها) */
+                #filterSelect .option_parent .label {
+                    flex: 1 !important;
+                    text-align: center !important;
+                }
+
+            /* زیرمنو */
+            #filterSelect .sub_options {
+                position: absolute !important;
+                top: 0 !important;
+                right: 100% !important; /* RTL: کنار آیتم باز شود */
+                min-width: 160px !important;
+                background: #fff !important;
+                border: 1px solid #e2e2e2 !important;
+                border-radius: 12px !important;
+                box-shadow: 0 10px 25px rgba(0,0,0,.12) !important;
+                padding: 6px !important;
+                display: none !important;
+                z-index: 999999 !important;
+            }
+
+            /* حالت باز */
+            #filterSelect .option_group.is-open > .sub_options {
+                display: block !important;
+            }
+            @media (max-width: 576px){
+                #filterSelect .option_parent{
+                    flex-direction: row-reverse;
+                }
+                #filterSelect .sub_options{
+                    top: 0 !important;
+                    left: 100% !important; /* RTL: کنار آیتم باز شود */
+                    background: rgba(50, 50, 50, 0.981) !important;
+                }
+                .arrows{
+                    transform: rotate(180deg);
+                }
+            }
+            @media (max-width: 384px){
+                #filterSelect .option_parent{
+                    flex-direction: row;
+                }
+                #filterSelect .sub_options{
+                    top: 100% !important;
+                    left: 0 !important; /* RTL: کنار آیتم باز شود */
+                    background: rgba(50, 50, 50, 0.981) !important;
+                }
+                .arrows{
+                    transform: rotate(270deg);
+                }
+            }
+
+            /* آیتم‌های زیرمنو */
+            #filterSelect .option_child {
+                padding: 10px 12px !important;
+                text-align: center !important;
+            }
+
+
+        .search-input-wrapper img {
+            cursor: pointer;
+        }
+
+        /* در صورت نیاز، استایل‌های تکمیلی مخصوص این صفحه */
+        .search-page-hero {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+            .search-page-hero span {
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+
+        .search-filter-wrapper {
+            margin-bottom: 24px;
+        }
+
+            .search-filter-wrapper.search-field-fixed {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+                background: #fff;
+            }
+
+        .project-number {
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+        }
+/**/
+        .paginate ul.paging-t {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .paging-t li a {
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+            .paging-t li a.current {
+                background: #0066ff;
+                color: #fff;
+            }
+    </style>
+
+
+    
+
+<!-- search hero -->
+    <section class="search-page-hero container">
+        <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6 36H4.5H6ZM6 12H7.5H6ZM14 4V2.5V4ZM34 4V2.5V4ZM42 12H40.5H42ZM42 24.6863H43.5H42ZM22.6863 44V42.5V44ZM14 44V45.5V44ZM39.6569 30.3431L38.5962 29.2825L39.6569 30.3431ZM28.3431 41.6569L29.4038 42.7175L28.3431 41.6569ZM26 36H24.5H26ZM34 28V26.5V26.5V28ZM16.9393 22.9393C16.3536 23.5251 16.3536 24.4749 16.9393 25.0607C17.5251 25.6464 18.4749 25.6464 19.0607 25.0607L18 24L16.9393 22.9393ZM22.0607 22.0607C22.6464 21.4749 22.6464 20.5251 22.0607 19.9393C21.4749 19.3536 20.5251 19.3536 19.9393 19.9393L21 21L22.0607 22.0607ZM6 36H7.5L7.5 12H6H4.5L4.5 36H6ZM14 4V5.5L34 5.5V4V2.5L14 2.5V4ZM42 12H40.5V24.6863H42H43.5V12H42ZM22.6863 44V42.5H14V44V45.5H22.6863V44ZM39.6569 30.3431L38.5962 29.2825L27.2825 40.5962L28.3431 41.6569L29.4038 42.7175L40.7175 31.4038L39.6569 30.3431ZM22.6863 44V45.5C25.2058 45.5 27.6222 44.4991 29.4038 42.7175L28.3431 41.6569L27.2825 40.5962C26.0635 41.8152 24.4102 42.5 22.6863 42.5V44ZM42 24.6863H40.5C40.5 26.4102 39.8152 28.0635 38.5962 29.2825L39.6569 30.3431L40.7175 31.4038C42.4991 29.6222 43.5 27.2058 43.5 24.6863H42ZM6 12H7.5C7.5 8.41015 10.4102 5.5 14 5.5V4V2.5C8.7533 2.5 4.5 6.75329 4.5 12H6ZM6 36H4.5C4.5 41.2467 8.75329 45.5 14 45.5V44V42.5C10.4101 42.5 7.5 39.5898 7.5 36H6ZM34 4V5.5C37.5899 5.5 40.5 8.41015 40.5 12H42H43.5C43.5 6.7533 39.2467 2.5 34 2.5V4ZM26 44H27.5V36H26H24.5V44H26ZM34 28V29.5L42 29.5V28V26.5H34V28ZM26 36H27.5C27.5 32.4101 30.4102 29.5 34 29.5V28V26.5C28.7533 26.5 24.5 30.7533 24.5 36H26ZM30 17H28.5C28.5 18.933 26.933 20.5 25 20.5V22V23.5C28.5899 23.5 31.5 20.5898 31.5 17H30ZM25 22V20.5C23.067 20.5 21.5 18.933 21.5 17H20H18.5C18.5 20.5898 21.4102 23.5 25 23.5V22ZM20 17H21.5C21.5 15.067 23.067 13.5 25 13.5V12V10.5C21.4102 10.5 18.5 13.4101 18.5 17H20ZM25 12V13.5C26.933 13.5 28.5 15.067 28.5 17H30H31.5C31.5 13.4101 28.5899 10.5 25 10.5V12ZM18 24L19.0607 25.0607L22.0607 22.0607L21 21L19.9393 19.9393L16.9393 22.9393L18 24Z"
+                fill="#090B3B" />
+        </svg>
+        <span>جستجو</span>
+    </section>
+
+    <!-- filter search -->
+    <section class="container search-filter-wrapper">
+        <div class="search-filter-item-wrapper col-x-6" style="margin: 0">
+
+            <div class="search-filter-item-container col-x-3 col-md-min col-sm-demi col-xs-full">
+                <span class="project-number">۰</span>
+                <span>پروژه</span>
+            </div>
+
+
+
+            <!-- projects (نوع پروژه) -->
+            <div class="search-filter-item-container col-x-5 col-md-x col-sm-demi col-xs-full">
+                <div class="custom-select" id="filterSelect">
+                    <div class="selected_filter" data-how="50">پروژه ها</div>
+                    <div class="options_filter">
+                        <!-- گزینه ریست / سرچ کلی -->
+                        <div class="option_filter" data-how="50">پروژه ها</div>
+                        <div class="option_filter" data-how="50">طراحی ویلا و ساخت</div>
+                        <%--<div class="option_filter" data-how="51">ساخت ویلا</div>--%>
+                        <div class="option_filter" data-how="51">طراحی آپارتمان و ساخت</div>
+                        <%--<div class="option_filter" data-how="53">ساخت آپارتمان</div>--%>
+                        <div class="option_filter" data-how="52">طراحی کلبه سوئیسی و ساخت</div>
+                        <div class="option_filter" data-how="53">طراحی ساختمان تجاری</div>
+
+                        <div class="option_group" data-how="55" data-value="L">
+                            <div class="option_parent" role="button" tabindex="0" aria-expanded="false">
+                                <div class="label">پلان های رایگان</div>
+                                <div class="arrowsss">›</div>
+                            </div>
+
+                            <div class="sub_options" role="menu">
+                                <div class="option_filter option_child" role="menuitem" data-how="56" data-value="L2">ویلایی</div>
+                                <div class="option_filter option_child" role="menuitem" data-how="57" data-value="L4">آپارتمانی</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- location -->
+            <%-- <div class="search-filter-item-container col-x-3 col-md-x col-sm-demi col-xs-full">
+                <div class="custom-select">
+                    <div class="selected_filter">منطقه</div>
+                    <div class="options_filter">
+                        <div class="option_filter">منطقه</div>
+                        <!-- reset -->
+
+                        <div class="option_filter">ساری</div>
+                        <div class="option_filter">نکا</div>
+                        <div class="option_filter">بهشهر</div>
+                        <div class="option_filter">بابل</div>
+                        <div class="option_filter">آمل</div>
+                        <div class="option_filter">بابلسر</div>
+                    </div>
+                </div>
+
+            </div>--%>
+            <!-- location -->
+            <div class="search-filter-item-container col-x-3 col-md-x col-sm-demi col-xs-full">
+                <div class="custom-select" id="select2">
+                    <div class="selected_filter">منطقه</div>
+                    <div class="options_filter region">
+                        <!-- آیتم ریست -->
+                        <div class="option_filter">منطقه</div>
+
+                        <% if (Regions != null && Regions.Count > 0)
+                            {
+                                foreach (var r in Regions)
+                                { %>
+                        <div class="option_filter"><%= Server.HtmlEncode(r) %></div>
+                        <%     }
+                            } %>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Meterage (متراژ کلی) -->
+            <div class="search-filter-item-container col-x-3 col-md-x col-sm-demi col-xs-full">
+                <div class="custom-select">
+                    <div class="selected_filter">متراژ کل</div>
+                    <div class="options_filter">
+                        <div class="option_filter">متراژ کل</div>
+                        <!-- reset -->
+
+                        <div class="option_filter">30-99.99</div>
+                        <div class="option_filter">100-199.99</div>
+                        <div class="option_filter">200-299.99</div>
+                        <div class="option_filter">300+</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- search responsive model -->
+        <div class="search-responsive col-x-5">
+            <!-- search -->
+            <div class="search-filter-item-container col-x-7">
+                <div class="search-input-wrapper">
+                    <input placeholder="جستجوی کد پروژه یا عنوان پروژه" type="text" />
+                    <img src="/content/img/icon/search-filter.svg" alt="نماپلان" />
+                </div>
+            </div>
+
+            <!-- extra filter -->
+            <div class="search-filter-item-container col-x-2">
+                <a class="filter-icon" href="#extra_filter">فیلتر </a>
+            </div>
+
+            <!-- reset filter -->
+            <div class="reset-filter search-filter-item-container col-x-2 col-sm-demi">
+                <img src="/content/img/icon/reset-filter.svg" alt="نماپلان" />
+            </div>
+            <div class="reset-filter reset-filter-sm search-filter-item-container col-x-2 col-sm-demi">
+                <span>پاک کردن فیلتر</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Slider (نتایج جستجو) -->
+    <section class="container mini-slider-wrapper search-result-wrapper mini-slider-free">
+        <header class="mini-slider-header d-none">
+            <div class="slider-header-title">
+                <!-- می‌توانی تیتر و آیکن اضافه کنی -->
+            </div>
+            <div class="slider-header-tab">
+                <div class="slider-tab search-filter-page">
+                    <label class="selected">
+                        <input type="radio" name="searchType" checked />
+                        <span>پربازدید ترین</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" />
+                        <span>ارزان ترین</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" />
+                        <span>گران ترین</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" />
+                        <span>کمترین متراژ</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" />
+                        <span>بیشترین متراژ</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" />
+                        <span>پرفروش ترین</span>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <div class="slider-item-wrapper">
+            <!-- این row را JS با داده‌های واقعی پر می‌کند -->
+            <div class="row js-plan-list">
+                <!-- کارت‌ها اینجا اینجکت می‌شوند -->
+            </div>
+
+            <!-- صفحه‌بندی -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="paginate">
+                        <ul class="paging-t js-paging">
+                            <!-- صفحه‌بندی داینامیک -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- متن توضیحی پایین صفحه -->
+            <div>
+                <div class="classic-info">
+                    <div id="aboutText"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- change extra search items class -->
+
+<script>
+    filterItem = document.getElementById("search-extra-option-size");
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 1060) {
+            filterItem.classList.remove("col-md-6");
+            filterItem.classList.add("col-md-9");
+        } else {
+            filterItem.classList.add("col-md-6");
+            filterItem.classList.remove("col-md-9");
+        }
+    });
+</script>
+
+<script>
+    // Fixed Search
+
+    $(window).on("scroll", setSearchFixed);
+
+    const _searchScrollShow =
+        $(".header-wrapper").outerHeight() + $(".search-wrapper").outerHeight();
+    function setSearchFixed() {
+        if ($(window).width() > 992) {
+            if (
+                $("body").scrollTop() > _searchScrollShow ||
+                $(document).scrollTop() > _searchScrollShow
+            ) {
+                $(".search-field").addClass("search-field-fixed");
+            } else {
+                $(".search-field").removeClass("search-field-fixed");
+            }
+        }
+    }
+    setSearchFixed();
+
+    // filter buttuns function
+
+    // const filterBtn = document.querySelector(".filter-icon-search");
+    // const closeBtn = document.querySelector(".close-btn-filter-search");
+
+    // const planSearchCheck = document.querySelector(".plan-search-check");
+
+    // filterBtn.addEventListener("click", () => {
+    //   planSearchCheck.style.opacity = "1";
+    //   planSearchCheck.style.height = "auto";
+    //   planSearchCheck.style.width = "auto";
+    //   filterBtn.style.display = "none";
+    //   closeBtn.style.display = "flex";
+    // });
+    // closeBtn.addEventListener("click", () => {
+    //   planSearchCheck.style.opacity = "0";
+    //   planSearchCheck.style.height = "0";
+    //   planSearchCheck.style.width = "0";
+    //   filterBtn.style.display = "flex";
+    //   closeBtn.style.display = "none";
+    // });
+</script>
+
+<!-- set value in customize select option -->
+<script>
+    function setupCustomSelect(selectId, hiddenId) {
+        const select = document.getElementById(selectId);
+        const hidden = document.getElementById(hiddenId);
+
+        select.querySelectorAll(".options_filter div").forEach((option) => {
+            option.addEventListener("click", () => {
+                const value = option.dataset.value;
+                hidden.value = value;
+                console.log("...", value);
+
+                select.querySelector(".selected_filter").innerText =
+                    option.innerText;
+            });
+        });
+    }
+    setupCustomSelect("filterSelect", "selectOneValue");
+    setupCustomSelect("select2", "selectTwoValue");
+    setupCustomSelect("select3", "selectThreeValue");
+</script>
+
