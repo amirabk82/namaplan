@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Sidebar Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            direction: rtl;
+        }
+
+        .sidebar {
+            border: 1px solid red;
+            width: 300px;
+            background-color: #333;
+            color: #fff;
+            height: 100vh;
+            padding: 10px 0;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            border: 1px solid red;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            border: 1px solid red;
+            position: relative;
+
+        }
+
+        .sidebar a {
+            border: 1px solid green;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+        }
+
+        .sidebar input[type="checkbox"] {
+            display: none;
+        }
+
+        .sidebar ul ul {
+            border: 1px solid blue;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .sidebar input[type="checkbox"]:checked+label+ul {
+            max-height: 500px;
+            /* تنظیم ارتفاع بیشتر برای باز شدن زیرمنو */
+        }
+
+        /* علامت + و - */
+        .sidebar label {
+            border: 1px solid yellow;
+            position: absolute;
+            top: 10px;
+            left: 3%;
+            width: 20px;
+            height: 20px;
+            /* transform: translateY(-50%); */
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar label::before {
+            content: "+";
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.5s ease, content 0.5s ease;
+        }
+
+        .sidebar input[type="checkbox"]:checked+label::before {
+            content: "-";
+
+            transform: rotate(0deg);
+            /* چرخش علامت */
+        }
+
+        .sidebar input[type="checkbox"]:checked+label {
+            transform: rotate(180deg);
+            /* چرخش کامل برچسب */
+        }
+
+        /* آیتم‌های دارای زیرمنو */
+        .sidebar li.has-submenu {
+
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li class="has-submenu">
+                <a href="#">Menu 1</a>
+                <input type="checkbox" id="menu1">
+                <label for="menu1"></label>
+                <ul>
+                    <li><a href="#">Submenu 1-1</a></li>
+                    <li><a href="#">Submenu 1-2</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Submenu 1-3</a>
+                        <input type="checkbox" id="submenu1-3">
+                        <label for="submenu1-3"></label>
+                        <ul>
+                            <li><a href="#">Submenu 1-3-1</a></li>
+                            <li><a href="#">Submenu 1-3-2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Menu 2</a>
+                <input type="checkbox" id="menu2">
+                <label for="menu2"></label>
+                <ul>
+                    <li><a href="#">Submenu 2-1</a></li>
+                    <li><a href="#">Submenu 2-2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu 3</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
